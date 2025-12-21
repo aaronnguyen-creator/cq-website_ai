@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import { footerSections } from "@/lib/site/footerLinks";
 
 const socials = [
@@ -42,47 +44,59 @@ const socials = [
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
+
   return (
     <footer className="bg-[#050608] text-white">
-      <div className="mx-auto w-full max-w-7xl px-6 py-16">
-        <div className="grid gap-10 border-b border-white/10 pb-12 lg:grid-cols-5">
-          <div className="space-y-4">
-            <p className="text-2xl font-heading">CQ</p>
-            <p className="text-sm text-white/70">
-              CQ is an AI-powered investment workflow platform built for
-              alternative investment teams—streamlining fundraising, diligence,
-              and collaboration.
+      <div className="mx-auto w-full max-w-6xl px-4 py-16 md:px-6 md:py-24">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-3 text-white">
+              <Image
+                src="/capq-logo.svg"
+                alt="CQ"
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain"
+              />
+            </Link>
+            <p className="text-sm leading-relaxed text-white/70">
+              CQ centralizes fundraising, diligence, and investor intelligence
+              so alternative investment teams can act with clarity.
             </p>
-            <div className="space-y-1 text-sm text-white/70">
-              <p className="font-semibold text-white">Contact us</p>
+            <div className="space-y-2 text-sm text-white/70">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                Contact
+              </p>
               <p>Email: hello@capq.ai</p>
               <p>Hotline: +1 (212) 555-0199</p>
               <p>123 Park Ave, New York, NY 10022</p>
             </div>
           </div>
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white">
-                {section.title}
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-white/70">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {footerSections.map((section) => (
+              <nav key={section.title} aria-label={section.title}>
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white">
+                  {section.title}
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-white/70">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
         </div>
-        <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
           <p>© {year} CQ. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             {socials.map((social) => (
               <a
                 key={social.href}
@@ -90,7 +104,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={social.label}
-                className="rounded-full border border-white/20 p-2 text-white/70 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                className="rounded-full border border-white/20 p-2 text-white/80 transition hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
               >
                 {social.icon}
               </a>

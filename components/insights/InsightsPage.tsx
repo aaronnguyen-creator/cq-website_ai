@@ -11,9 +11,11 @@ type InsightsPageProps = {
 
 export function InsightsPage({ posts, featured }: InsightsPageProps) {
   return (
-    <div className="min-h-screen bg-[#050608] text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <main>
         <InsightsHero />
+
+        {/* Hero → Featured → Grid remain the mandated order */}
         <FeaturedInsights posts={posts} featured={featured} />
         <InsightsGrid posts={posts} />
         <SubscribeCTA />

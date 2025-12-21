@@ -2,6 +2,7 @@ export type NavItem = {
   title: string;
   description: string;
   href: string;
+  disabled?: boolean;
   items?: Array<{
     title: string;
     description: string;
@@ -66,6 +67,7 @@ export const navConfig: {
       title: "Pricing",
       description: "Select a plan that fits your team and scale.",
       href: "/pricing",
+      disabled: true,
     },
     {
       title: "Resources",
@@ -98,6 +100,7 @@ export const navConfig: {
       title: "Customers",
       description: "See how leading firms use CapQ to scale.",
       href: "/customers",
+      disabled: true,
     },
     {
       title: "About",

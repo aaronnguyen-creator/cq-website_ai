@@ -2,13 +2,13 @@ import type { HomeContent } from "./types";
 
 export const homeContent: HomeContent = {
   hero: {
-    eyebrow: "AI-powered fundraising management",
-    title: "Streamline fundraising and maximize opportunities with CQ.",
+    eyebrow: "AI-powered fundraising workspace",
+    title: "Run fundraising with clarity.",
     description:
-      "CQ is an AI-powered fundraising management platform designed to simplify alternative investments.",
-    primaryCta: { label: "Join the waitlist", href: "/waitlist" },
-    secondaryCta: { label: "Request a demo", href: "/request-demo" },
-    proofLabel: "Trusted by investment teams",
+      "CQ centralizes investor discovery, diligence, and collaboration so alternative investment teams can move from outreach to close with less friction.",
+    primaryCta: { label: "Request a demo", href: "/request-demo" },
+    secondaryCta: { label: "Join the waitlist", href: "/waitlist" },
+    proofLabel: "Trusted by alternative investment teams",
     proofLogos: [
       { name: "Allocator Firm", src: "/logo-1.svg" },
       { name: "Family Office", src: "/logo-2.svg" },
@@ -17,25 +17,31 @@ export const homeContent: HomeContent = {
     ],
     heroImage: {
       src: "/images/home/Dummy-My-Deal-1.png",
-      alt: "CQ platform preview",
+      alt: "CQ fundraising workspace preview",
     },
   },
   benefitsIntro: {
-    title: "Streamline Fundraising and Maximize Opportunities with CQ",
+    title: "Bring every fundraising motion into one system",
     description:
-      "CQ is an AI-powered fundraising management platform designed to simplify alternative investments.",
+      "Give your team a shared workflow for investor targeting, diligence, and reporting—with audit-ready context at each step.",
     items: [
       {
-        title: "Simplifies deal workflows for seamless operations.",
-        image: { src: "/images/home/benefit-1.svg", alt: "Deal workflows" },
+        title: "Structured pipelines keep mandates, tasks, and approvals aligned.",
+        image: {
+          src: "/images/features/structure-pipeline.png",
+          alt: "Structured fundraising workflow",
+        },
       },
       {
-        title: "Uncovers opportunities to maximize returns.",
-        image: { src: "/images/home/benefit-2.svg", alt: "Opportunity insights" },
+        title: "Investor intelligence surfaces context before every conversation.",
+        image: {
+          src: "/images/features/deal-context.jpg",
+          alt: "Investor intelligence view",
+        },
       },
       {
-        title: "An all-in-one platform to close deals 10X faster.",
-        image: { src: "/images/home/benefit-3.svg", alt: "Closing deals" },
+        title: "AI summaries cut time spent on memos, notes, and diligence recaps.",
+        image: { src: "/images/features/ai-summary.png", alt: "AI summary" },
       },
     ],
   },
@@ -44,76 +50,94 @@ export const homeContent: HomeContent = {
     items: [
       {
         title: "Allocators",
-        description: "Centralize mandates and manage allocations with confidence.",
+        description:
+          "Map LP mandates, assign owners, and keep outreach accountable.",
         href: "/product/allocators",
       },
       {
         title: "Data Room",
-        description: "Secure data rooms with embedded AI-powered context.",
+        description:
+          "Share diligence files with permissions, analytics, and audit logs.",
         href: "/product/data-room",
       },
       {
         title: "Due Diligence",
-        description: "Orchestrate diligence workflows and approvals in one place.",
+        description:
+          "Capture Q&A, comments, and approvals without leaving the workspace.",
         href: "/product/due-diligence",
       },
       {
         title: "Investor Database",
-        description: "Access enriched investor profiles to expand relationships.",
+        description:
+          "Search investors by mandate, strategy, geography, and check size.",
         href: "/product/investor-database",
       },
       {
         title: "Investment Memos",
-        description: "Generate structured memos with AI drafting assistants.",
+        description:
+          "Draft structured memos with AI and keep them linked to the data room.",
         href: "/product/investment-memos",
       },
       {
         title: "Pitch Deck Sharing",
-        description: "Share trackable decks with live analytics.",
+        description: "Distribute trackable decks and get alerts when LPs engage.",
         href: "/product/pitch-deck-sharing",
       },
     ],
   },
   outcomes: {
-    title: "Achieve Better Outcomes with CQ",
+    title: "Outcomes investment teams can count on",
     description:
-      "With deep expertise in alternative investments, CQ simplifies every step of your fundraising journey—streamlining deal management, investor connections, and due diligence.",
+      "CQ unifies investor intelligence, workflows, and collaboration so you see the full fundraising lifecycle in one system.",
     cards: [
       {
-        title: "Effortless Matchmaking and Fundraising",
-        description:
-          "Simplify fundraising with AI-powered tools that manage the full deal lifecycle for faster closures.",
-        image: { src: "/images/home/outcome-1.svg", alt: "Matchmaking" },
+        title: "Structured deal visibility",
+        description: "View mandates, tasks, and blockers at a glance.",
+        image: {
+          src: "/images/home/outcome-1.svg",
+          alt: "Structured deal visibility",
+        },
       },
       {
-        title: "Enhanced Investor Targeting and Visibility",
+        title: "Sharper investor targeting",
         description:
-          "Access an enriched database, boost visibility, and connect with the right investors using premium tools.",
-        image: { src: "/images/home/outcome-2.svg", alt: "Investor targeting" },
+          "Filter allocators by mandate fit, geography, and relationship history.",
+        image: {
+          src: "/images/home/outcome-2.svg",
+          alt: "Investor targeting tools",
+        },
       },
       {
-        title: "Smarter, Efficient Workflows",
+        title: "AI-assisted diligence",
         description:
-          "Streamline due diligence, memos, and admin tasks with AI-assisted tools, focusing on high-impact relationships.",
-        image: { src: "/images/home/outcome-3.svg", alt: "Efficient workflows" },
+          "Turn decks and data rooms into instant answers, summaries, and memos.",
+        image: {
+          src: "/images/home/outcome-3.svg",
+          alt: "AI diligence assistant",
+        },
       },
       {
-        title: "Centralized Deal Invitations",
+        title: "Secure collaboration",
         description:
-          "Streamline workflows with a single platform for deal invitations, data rooms, and organized collaboration.",
-        image: { src: "/images/home/outcome-4.svg", alt: "Deal invitations" },
+          "Invite LPs with guardrails, audit logs, and message history in one place.",
+        image: {
+          src: "/images/home/outcome-4.svg",
+          alt: "Secure collaboration",
+        },
       },
       {
-        title: "AI-Driven Deal Insights",
+        title: "Faster memo creation",
         description:
-          "Use an AI chatbot to analyze documents, uncover insights, and make smarter decisions faster.",
-        image: { src: "/images/home/outcome-5.svg", alt: "Deal insights" },
+          "Generate first drafts instantly and edit with your team's commentary.",
+        image: { src: "/images/home/outcome-5.svg", alt: "Memo creation" },
       },
       {
-        title: "Customized Mandates & Manager Discovery",
-        description:
-          "Create tailored mandates and discover managers with a dynamic database aligned with your strategy.",
-        image: { src: "/images/home/outcome-6.svg", alt: "Mandate discovery" },
+        title: "Audit-ready history",
+        description: "Retain updates, files, and approvals for every mandate.",
+        image: {
+          src: "/images/home/outcome-6.svg",
+          alt: "Audit-ready history",
+        },
       },
     ],
   },
@@ -122,7 +146,7 @@ export const homeContent: HomeContent = {
     items: [
       {
         quote:
-          "CQ connects our investor mandates with a living pipeline and replaces three separate tools with one streamlined process.",
+          "CQ replaced our spreadsheets, CRM, and data room vendor with one pipeline our partners trust.",
         name: "Jenna Wells",
         title: "Partner",
         company: "Northwind Capital",
@@ -130,7 +154,7 @@ export const homeContent: HomeContent = {
       },
       {
         quote:
-          "Our team can spin up diligence workspaces in minutes and invite stakeholders with clear guardrails.",
+          "We launch diligence rooms in minutes and keep every answer, approval, and comment traceable.",
         name: "Andre Marsh",
         title: "Head of Diligence",
         company: "Atlas Ridge",
@@ -138,7 +162,7 @@ export const homeContent: HomeContent = {
       },
       {
         quote:
-          "The AI copilots surface insights from decks and data rooms instantly—saving hours per memo.",
+          "The AI copilots turn decks into clean memos so our associates focus on analysis, not busy work.",
         name: "Claire Bennett",
         title: "Principal",
         company: "Crescent Peak",
@@ -146,7 +170,7 @@ export const homeContent: HomeContent = {
       },
       {
         quote:
-          "We finally have a single source of truth for investor updates, deal status, and ask/answer trails.",
+          "CQ gives us a single source of truth for investor updates, deal status, and response trails.",
         name: "Michael Ortez",
         title: "COO",
         company: "Harbor Grove",
@@ -155,12 +179,14 @@ export const homeContent: HomeContent = {
     ],
   },
   ctaBox: {
-    title: "Ready to move faster with CQ?",
-    primaryCta: { label: "Join the waitlist", href: "/waitlist" },
-    secondaryCta: { label: "Request a demo", href: "/request-demo" },
+    title: "Ready to run fundraising with clarity?",
+    description:
+      "See how CQ brings investor targeting, diligence, and reporting into one finance-grade workspace.",
+    primaryCta: { label: "Request a demo", href: "/request-demo" },
+    secondaryCta: { label: "Join the waitlist", href: "/waitlist" },
   },
   resources: {
-    title: "Resources",
+    title: "Latest insights",
     source: "insightsNewest",
     count: 3,
   },

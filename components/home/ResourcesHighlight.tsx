@@ -14,14 +14,14 @@ export function ResourcesHighlight({ data }: ResourcesHighlightProps) {
     .slice(0, data.count);
 
   return (
-    <section className="bg-white py-20 text-[#0B0F14]">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <section className="bg-background py-16 text-foreground md:py-24">
+      <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-[#9CA3AF]">
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
               Latest
             </p>
-            <h2 className="mt-2 text-3xl font-heading font-semibold">
+            <h2 className="text-3xl font-heading font-semibold tracking-tight md:text-4xl">
               {data.title}
             </h2>
           </div>

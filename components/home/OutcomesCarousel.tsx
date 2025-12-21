@@ -21,32 +21,34 @@ export function OutcomesCarousel({ data }: OutcomesCarouselProps) {
   };
 
   return (
-    <section className="bg-[#F7F8FB] py-20 text-[#0B0F14]">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <section className="bg-muted py-16 text-foreground md:py-24">
+      <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-[#9CA3AF]">
+          <div className="max-w-3xl space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
               Outcomes
             </p>
-            <h2 className="mt-2 text-3xl font-heading font-semibold">
+            <h2 className="text-3xl font-heading font-semibold tracking-tight md:text-4xl">
               {data.title}
             </h2>
-            <p className="mt-3 text-base text-[#4B5563]">
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
               {data.description}
             </p>
           </div>
           <div className="hidden gap-3 sm:flex">
             <button
               type="button"
-              className="rounded-full border border-black/10 bg-white p-3 text-[#0B0F14] transition hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B0F14]/20"
+              className="rounded-full border border-border bg-background p-3 text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
               onClick={() => scrollByAmount(-1)}
+              aria-label="Scroll outcomes left"
             >
               ←
             </button>
             <button
               type="button"
-              className="rounded-full border border-black/10 bg-white p-3 text-[#0B0F14] transition hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B0F14]/20"
+              className="rounded-full border border-border bg-background p-3 text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
               onClick={() => scrollByAmount(1)}
+              aria-label="Scroll outcomes right"
             >
               →
             </button>
@@ -54,20 +56,23 @@ export function OutcomesCarousel({ data }: OutcomesCarouselProps) {
         </div>
         <div
           ref={scrollRef}
-          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6"
+          tabIndex={0}
+          aria-label="Outcome cards"
+          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
         >
           {data.cards.map((card) => (
             <div
               key={card.title}
-              className="snap-start rounded-3xl border border-black/10 bg-white p-6 shadow-[0_20px_45px_rgba(15,23,42,0.06)] min-w-[280px] sm:min-w-[320px] lg:min-w-[360px]"
+              className="min-w-[280px] snap-start rounded-2xl border border-border bg-card p-6 shadow-[0_20px_50px_rgba(15,23,42,0.05)] sm:min-w-[320px] lg:min-w-[360px]"
             >
-              <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-black/5 bg-gradient-to-br from-[#f3f5f7] to-white">
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-border/60 bg-muted">
                 {card.image?.src ? (
                   <Image
                     src={card.image.src}
                     alt={card.image.alt}
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 80vw, 360px"
+                    className="object-contain p-6"
                   />
                 ) : (
                   <div className="h-full w-full" />
@@ -76,7 +81,9 @@ export function OutcomesCarousel({ data }: OutcomesCarouselProps) {
               <h3 className="mt-4 text-xl font-heading font-semibold">
                 {card.title}
               </h3>
-              <p className="mt-2 text-sm text-[#4B5563]">{card.description}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {card.description}
+              </p>
             </div>
           ))}
         </div>

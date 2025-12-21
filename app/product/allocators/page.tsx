@@ -5,14 +5,14 @@ import { allocatorsContent } from "@/lib/product/allocatorsContent";
 
 export const metadata: Metadata = {
   title:
-    "CQ for Allocators | Investor Software for Diligence & Manager Discovery",
+    "CQ for Allocators | Run Diligence in One Workspace",
   description:
-    "Streamline deal tracking, manager discovery, and due diligence with CQ—AI-powered insights, a 95K+ manager network, and secure collaboration.",
+    "Centralize mandates, manager intake, and AI diligence in CQ so allocator teams can qualify managers faster with full visibility.",
   openGraph: {
     title:
-      "CQ for Allocators | Investor Software for Diligence & Manager Discovery",
+      "CQ for Allocators | Run Diligence in One Workspace",
     description:
-      "Streamline deal tracking, manager discovery, and due diligence with CQ—AI-powered insights, a 95K+ manager network, and secure collaboration.",
+      "Centralize mandates, manager intake, and AI diligence in CQ so allocator teams can qualify managers faster with full visibility.",
     url: "/product/allocators",
   },
 };

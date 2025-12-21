@@ -19,57 +19,62 @@ export function InsightsGrid({ posts }: InsightsGridProps) {
   const canLoadMore = visibleCount < sorted.length;
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-16 text-white">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-white/50">
-            Library
-          </p>
-          <h2 className="mt-2 text-3xl font-heading font-semibold">
-            All Insights
-          </h2>
+    <section className="border-b border-border bg-background py-16 md:py-20">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:gap-12 md:px-6">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold text-muted-foreground">
+              Library
+            </p>
+            <h2 className="text-3xl font-heading font-semibold tracking-tight md:text-4xl">
+              All insights
+            </h2>
+            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              Browse the full archive—sorted by publish date so your team can jump straight into the most recent analyses.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-3 md:w-auto md:flex-row">
+            <label className="flex-1">
+              <span className="sr-only">Search insights</span>
+              <input
+                type="search"
+                placeholder="Search insights"
+                className="w-full rounded-full border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
+              />
+            </label>
+            <label className="md:w-48">
+              <span className="sr-only">Filter by category</span>
+              <select
+                className="w-full rounded-full border border-border bg-background px-4 py-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
+                defaultValue="all"
+              >
+                <option value="all">All categories</option>
+                <option value="diligence">Diligence</option>
+                <option value="ai">AI workflows</option>
+                <option value="strategy">Strategy</option>
+              </select>
+            </label>
+          </div>
         </div>
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-          <label className="flex-1">
-            <span className="sr-only">Search insights</span>
-            <input
-              type="search"
-              placeholder="Search insights..."
-              className="w-full rounded-full border border-white/10 bg-transparent px-4 py-2 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/30"
-            />
-          </label>
-          <label className="sm:w-48">
-            <span className="sr-only">Filter by category</span>
-            <select
-              className="w-full rounded-full border border-white/10 bg-[#050608] px-4 py-2 text-sm text-white focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/30"
-              defaultValue="all"
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+          {visiblePosts.map((post) => (
+            <PostCard key={post.id} post={post} variant="grid" />
+          ))}
+        </div>
+        {canLoadMore ? (
+          <div className="flex justify-center">
+            <Button
+              onClick={() =>
+                setVisibleCount((count) =>
+                  Math.min(count + batchSize, sorted.length)
+                )
+              }
             >
-              <option value="all">All categories</option>
-              <option value="diligence">Diligence</option>
-              <option value="ai">AI workflows</option>
-              <option value="strategy">Strategy</option>
-            </select>
-          </label>
-        </div>
+              Load more articles
+            </Button>
+          </div>
+        ) : null}
       </div>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {visiblePosts.map((post) => (
-          <PostCard key={post.id} post={post} variant="grid" />
-        ))}
-      </div>
-      {canLoadMore ? (
-        <div className="mt-10 flex justify-center">
-          <Button
-            onClick={() =>
-              setVisibleCount((count) =>
-                Math.min(count + batchSize, sorted.length)
-              )
-            }
-          >
-            Load more articles
-          </Button>
-        </div>
-      ) : null}
     </section>
   );
 }

@@ -4,39 +4,25 @@ export const allocatorsContent: FeaturePageConfig = {
   navAnchors: [
     { id: "overview", label: "Overview" },
     { id: "challenges", label: "Challenges" },
-    { id: "highlights", label: "Highlights" },
+    { id: "solution", label: "Solution" },
     { id: "faq", label: "FAQ" },
   ],
   hero: {
     id: "overview",
-    eyebrow: "Investment Management Software",
-    title: "Your Gateway to Tailored Investment Opportunities",
+    eyebrow: "Allocator workflow platform",
+    title: "Run allocator diligence in one workspace.",
     description:
-      "CQ equips investors and allocators with an all-in-one platform to streamline workflows, uncover tailored opportunities, and make data-driven decisions faster—combining AI-powered insights, an extensive manager network, and real-time market intelligence.",
-    primaryCta: { label: "Join Our Waitlist", href: "/waitlist" },
-    secondaryCta: { label: "Book a Demo", href: "/request-demo" },
+      "CQ centralizes mandates, manager discovery, and diligence collaboration so allocator teams can qualify managers faster with complete visibility.",
+    primaryCta: { label: "Request a demo", href: "/request-demo" },
+    secondaryCta: { label: "Join waitlist", href: "/waitlist" },
     image: {
-      src: "/images/allocators/hero.png",
-      alt: "CQ Allocators workspace",
-      width: 1600,
-      height: 1000,
+      src: "/images/home/Dummy-My-Deal-1.png",
+      alt: "CQ workspace preview",
     },
   },
-  trustBar: {
-    id: "trust",
-    title:
-      "Used by investment professionals with experience from these world-class institutions",
-    logos: [
-      "Endowment",
-      "Foundation",
-      "Family Office",
-      "Consultant",
-      "Pension",
-    ],
-  },
   customerProof: {
-    heading: "Powering investment teams.",
-    subheading: "From emerging funds to established institutions.",
+    heading: "Powering allocator teams.",
+    subheading: "From family offices to pensions.",
     cta: { label: "Meet our customers", href: "/customers" },
     logos: [
       { name: "Logo 1", src: "/logo-1.svg" },
@@ -47,107 +33,108 @@ export const allocatorsContent: FeaturePageConfig = {
   },
   problem: {
     id: "challenges",
-    heading: "The challenges investors face",
+    heading: "Where allocator workflows stall",
     items: [
       {
-        title: "Fragmented Deal Tracking",
-        body: "Keeping up with multiple deal invitations and updates can be time-consuming and disorganized.",
+        title: "Scattered deal intake",
+        body: "Invitations, decks, and manager notes live across inboxes and shared drives, so context gets lost.",
       },
       {
-        title: "Limited Manager Insights",
-        body: "Identifying managers that align with your mandates often requires significant manual effort.",
+        title: "Limited manager context",
+        body: "Comparing managers to mandates requires manual research, side emails, and tribal knowledge.",
       },
       {
-        title: "Slow Due Diligence",
-        body: "Gathering and analyzing data for comprehensive assessments can stall decision-making.",
+        title: "Slow diligence cycles",
+        body: "Document review, Q&A, and approvals happen in separate tools, delaying investment committee decisions.",
       },
       {
-        title: "Information Overload",
-        body: "Sifting through excessive materials without clear priorities delays actionable decisions.",
+        title: "No real-time visibility",
+        body: "Leaders can't see which managers are progressing or who owns the next step.",
       },
     ],
   },
   solution: {
     id: "solution",
-    heading: "How Can CQ Help?",
-    subheading: "Maximize Returns with Smarter Tools",
-    body: "CQ equips investors with an all-in-one platform to streamline workflows, uncover tailored opportunities, and make data-driven decisions faster.",
-  },
-  highlights: {
-    id: "highlights",
-    heading: "Platform highlights",
+    heading: "Solution",
+    subheading: "See how allocator teams stay in sync from intake through diligence.",
+    body: "Every step sits in one workspace so mandates, manager discovery, and approvals stay transparent for the entire allocator team.",
     features: [
       {
-        title: "Centralized Opportunity Management",
-        outcome: "Manage deal invitations, documents, and collaboration in one place.",
+        title: "Mandate intake and routing",
+        description:
+          "Capture every inbound manager invitation with owners, tasks, and documents tied to one structured record.",
         bullets: [
-          "Track deal invitations in a single hub",
-          "Organize documents in a secure data room",
-          "Collaborate with advanced investment analytics",
+          "Consolidate invitations, decks, and threads in one view",
+          "Assign owners with due dates and reminders",
+          "Maintain an audit trail of comments and files",
         ],
         image: {
-          src: "/images/allocators/feature-1.png",
-          alt: "Centralized opportunity management",
+          src: "/images/features/allocators/allocators-features-01.png",
+          alt: "Centralized manager intake workspace",
           width: 1200,
           height: 800,
         },
       },
       {
-        title: "Tailored Mandates",
-        outcome: "Define criteria and connect with managers aligned to your strategy.",
+        title: "Mandate definitions drive sourcing",
+        description:
+          "Document allocator criteria once so sourcing stays aligned with strategy, structure, and risk targets.",
         bullets: [
-          "Set precise investment criteria",
-          "Surface opportunities that match mandates",
-          "Reduce manual sourcing effort",
+          "Capture strategy, vehicle, geography, and check size",
+          "Share mandate cards with IC and operations",
+          "Use saved segments to prioritize outreach",
         ],
         image: {
-          src: "/images/allocators/feature-2.png",
-          alt: "Tailored mandates",
+          src: "/images/features/allocators/allocators-features-02.jpg",
+          alt: "Mandate definition workflow",
           width: 1200,
           height: 800,
         },
       },
       {
-        title: "Extensive Manager Network",
-        outcome: "Find relevant managers faster with deep filtering.",
+        title: "Allocator-grade manager network",
+        description:
+          "Filter 95K+ managers down to the few that match your mandate inputs with allocator-friendly data.",
         bullets: [
-          "Access a database of 95K+ asset managers",
-          "Use advanced filters to narrow matches",
-          "Pinpoint opportunities tailored to mandates",
+          "Search by mandate fit, track record, or vehicle",
+          "View historical engagement notes and files",
+          "Pin and compare managers for review",
         ],
         image: {
-          src: "/images/allocators/feature-3.png",
-          alt: "Manager network",
+          src: "/images/features/allocators/allocators-features-03.jpg",
+          alt: "Allocator-grade manager network",
           width: 1200,
           height: 800,
         },
       },
       {
-        title: "AI-Powered Due Diligence",
-        outcome: "Accelerate research with instant, in-depth insights.",
+        title: "AI diligence briefs",
+        description:
+          "Summarize decks, DDQs, and data rooms into structured briefs that highlight risks and follow-ups.",
         bullets: [
-          "AI chatbot trained in alternative markets",
-          "Instant answers from imported knowledge base",
-          "Reduce decision-making delays",
+          "Generate memos grounded in uploaded materials",
+          "Highlight risks, follow-ups, and next steps",
+          "Share outputs directly with stakeholders",
         ],
         image: {
-          src: "/images/allocators/feature-4.png",
-          alt: "AI due diligence",
+          src: "/images/features/allocators/allocators-features-04.jpg",
+          alt: "AI-assisted diligence briefs",
           width: 1200,
           height: 800,
         },
       },
       {
-        title: "Ask AI in the Data Room",
-        outcome: "Extract actionable insights directly from shared documents.",
+        title: "Ask AI across the data room",
+        description:
+          "Ask natural-language questions across the entire data room and get cited answers.",
         bullets: [
-          "Ask questions across deal materials",
-          "Get instant, grounded answers",
-          "Save time and make data-driven decisions",
+          "Reference DDQs, track records, and attachments in seconds",
+          "Cited answers link straight to the source page",
+          "Shorten the loop between research and decisions",
         ],
         image: {
-          src: "/images/allocators/feature-5.png",
-          alt: "Ask AI in the data room",
+          src: "/images/features/allocators/allocators-features-05.jpg",
+          alt: "Ask AI across allocator data rooms",
           width: 1200,
           height: 800,
         },
@@ -156,21 +143,21 @@ export const allocatorsContent: FeaturePageConfig = {
   },
   proof: {
     id: "proof",
-    heading: "Profitable Investors Rely on CQ",
+    heading: "Allocator teams rely on CQ",
     intro:
-      "CQ combines decades of industry expertise, tailored tools for accelerated growth, and advanced AI to help investors identify high-potential opportunities and maximize returns.",
+      "CQ combines allocator expertise, a vetted manager network, and grounded AI so you can prioritize the right opportunities with confidence.",
     pillars: [
       {
-        title: "Built on Decades of Expertise",
-        body: "Created by industry veterans with deep knowledge of alternative investments—tailored to investor needs.",
+        title: "Built with allocator operators",
+        body: "Workflow patterns reflect decades of LP experience, covering intake, diligence, approvals, and reporting.",
       },
       {
-        title: "Tailored to Accelerate Your Growth",
-        body: "From deal tracking to due diligence, CQ helps you identify opportunities faster and align them with your preferences.",
+        title: "Structure and control",
+        body: "Granular permissions, audit trails, and standardized templates keep every stakeholder aligned.",
       },
       {
-        title: "AI-Powered Precision for Greater Returns",
-        body: "Actionable insights that surface opportunities aligned to your strategy—helping you stay ahead in competitive markets.",
+        title: "Grounded AI outputs",
+        body: "Insights and answers stay tied to your data room, so teams can move faster without sacrificing rigor.",
       },
     ],
   },
@@ -181,10 +168,10 @@ export const allocatorsContent: FeaturePageConfig = {
   },
   ctaBand: {
     id: "cta-mid",
-    heading: "Seize profitable opportunities quickly.",
-    body: "Discover smarter, faster ways to connect with opportunities. Contact us today to elevate your investment process.",
-    primaryCta: { label: "Join Our Waitlist", href: "/waitlist" },
-    secondaryCta: { label: "Book a Demo", href: "/request-demo" },
+    heading: "Give your allocator team one source of truth.",
+    body: "See how CQ standardizes manager intake, diligence, and reporting so nothing slips through inboxes.",
+    primaryCta: { label: "Request a demo", href: "/request-demo" },
+    secondaryCta: { label: "Join waitlist", href: "/waitlist" },
   },
   otherProducts: {
     id: "other-products",
@@ -192,12 +179,12 @@ export const allocatorsContent: FeaturePageConfig = {
     items: [
       {
         title: "Investor Database",
-        body: "Discover and filter relevant investors/managers at scale.",
+        body: "Discover and filter relevant managers at scale.",
         href: "/product/investor-database",
       },
       {
         title: "AI Investment Memo Generator",
-        body: "Generate structured memos from your documents in minutes.",
+        body: "Generate audit-ready memos from your documents in minutes.",
         href: "/product/investment-memos",
       },
       {
@@ -207,12 +194,12 @@ export const allocatorsContent: FeaturePageConfig = {
       },
       {
         title: "Data Room & Chatbot",
-        body: "Secure document sharing with Ask AI on top.",
+        body: "Share documents with permissions plus Ask AI.",
         href: "/product/data-room",
       },
       {
         title: "Pitch Deck Sharing",
-        body: "Share decks with tracking and controlled access.",
+        body: "Share decks with permissions and engagement tracking.",
         href: "/product/pitch-deck-sharing",
       },
     ],
@@ -222,16 +209,49 @@ export const allocatorsContent: FeaturePageConfig = {
     heading: "Resources",
     items: [
       {
-        title: "Allocator diligence workflow (guide)",
+        title: "Allocator diligence workflow guide",
         href: "/resources/allocator-workflow",
+        description:
+          "Structure your intake, tasking, and approvals with a repeatable diligence checklist.",
+        category: "Guide",
+        date: "2025-01-05",
+        readingTime: "6 min read",
+        image: {
+          src: "/images/home/outcome-1.svg",
+          alt: "Allocator diligence workflow guide",
+          width: 640,
+          height: 360,
+        },
       },
       {
-        title: "How to define mandates for manager discovery",
+        title: "Define mandates for manager discovery",
         href: "/resources/define-mandates",
+        description:
+          "Align sourcing with IC criteria using mandate cards and saved segments.",
+        category: "Playbook",
+        date: "2025-02-12",
+        readingTime: "5 min read",
+        image: {
+          src: "/images/home/outcome-2.svg",
+          alt: "Mandate definition playbook",
+          width: 640,
+          height: 360,
+        },
       },
       {
-        title: "Security & auditability overview",
+        title: "Security and auditability overview",
         href: "/resources/security-overview",
+        description:
+          "Review CQ’s controls for permissions, encryption, and audit logs.",
+        category: "Security",
+        date: "2024-12-01",
+        readingTime: "4 min read",
+        image: {
+          src: "/images/home/outcome-4.svg",
+          alt: "Security and auditability overview",
+          width: 640,
+          height: 360,
+        },
       },
     ],
   },
@@ -240,19 +260,19 @@ export const allocatorsContent: FeaturePageConfig = {
     heading: "Frequently Asked Questions",
     items: [
       {
-        question: "How does CQ help me find relevant opportunities?",
+        question: "How does CQ surface relevant managers?",
         answer:
-          "Define mandates with precise criteria and CQ surfaces managers that match your objectives using proprietary data and AI-driven insights.",
+          "Capture mandates with precise criteria and CQ highlights managers that match using proprietary data plus AI filtering.",
       },
       {
-        question: "Can I track my deal invitations in CQ?",
+        question: "Can we track deal invitations end-to-end?",
         answer:
-          "Yes. Consolidate deal invitations, documents, and collaboration threads inside a single, secure workspace.",
+          "Yes. Intake every opportunity, assign owners, and keep documents, tasks, and notes inside one allocator workspace.",
       },
       {
-        question: "How does the due diligence process work on CQ?",
+        question: "How does AI support diligence?",
         answer:
-          "Upload materials to the data room, invite stakeholders, and use Ask AI to interrogate documents for grounded answers.",
+          "Upload materials to the data room, then use AI to summarize decks, generate memos, and ask cited questions across the documents.",
       },
       {
         question: "How secure is my data?",
@@ -260,17 +280,17 @@ export const allocatorsContent: FeaturePageConfig = {
           "CQ encrypts data in transit and at rest, provides granular permissions, and maintains detailed audit trails for every action.",
       },
       {
-        question: "What type of support does CQ offer for Allocators?",
+        question: "What support do CQ customers receive?",
         answer:
-          "You receive onboarding support, best-practice playbooks, and dedicated success resources to ensure your team gets value quickly.",
+          "You get onboarding sessions, allocator playbooks, and a dedicated success partner to keep your team moving.",
       },
     ],
   },
   finalCta: {
     id: "final-cta",
     heading: "Make allocator diligence faster—without losing control.",
-    body: "See how CQ centralizes opportunities, accelerates diligence, and supports better investment decisions.",
-    primaryCta: { label: "Join Our Waitlist", href: "/waitlist" },
-    secondaryCta: { label: "Book a Demo", href: "/request-demo" },
+    body: "See how CQ centralizes mandates, manager intake, and AI diligence in one finance-grade platform.",
+    primaryCta: { label: "Request a demo", href: "/request-demo" },
+    secondaryCta: { label: "Join waitlist", href: "/waitlist" },
   },
 };

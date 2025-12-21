@@ -47,24 +47,19 @@ export type ProblemContent = {
   }>;
 };
 
+export type SolutionFeature = {
+  title: string;
+  description: string;
+  bullets?: string[];
+  image: HeroImage;
+};
+
 export type SolutionContent = {
   id: string;
   heading: string;
   subheading: string;
   body: string;
-};
-
-export type HighlightFeature = {
-  title: string;
-  outcome: string;
-  bullets: string[];
-  image: HeroImage;
-};
-
-export type HighlightsContent = {
-  id: string;
-  heading?: string;
-  features: HighlightFeature[];
+  features: SolutionFeature[];
 };
 
 export type ProofPillarsContent = {
@@ -112,6 +107,11 @@ export type OtherProductsContent = {
 export type ResourceLink = {
   title: string;
   href: string;
+  description?: string;
+  category?: string;
+  date?: string;
+  readingTime?: string;
+  image?: HeroImage;
 };
 
 export type ResourcesContent = {
@@ -147,11 +147,10 @@ export type NavAnchor = {
 export type FeaturePageConfig = {
   navAnchors: NavAnchor[];
   hero: HeroContent;
-  trustBar: TrustBarContent;
+  trustBar?: TrustBarContent;
   customerProof?: CustomerProofContent;
   problem: ProblemContent;
   solution: SolutionContent;
-  highlights: HighlightsContent;
   proof: ProofPillarsContent;
   testimonials?: TestimonialsContent;
   ctaBand: CTABandContent;

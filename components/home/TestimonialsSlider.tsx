@@ -12,6 +12,7 @@ export function TestimonialsSlider({ data }: TestimonialsSliderProps) {
   const items = data?.items ?? [];
   const total = items.length;
   const [index, setIndex] = useState(0);
+
   if (!total) return null;
 
   const goTo = (direction: number) => {
@@ -23,52 +24,59 @@ export function TestimonialsSlider({ data }: TestimonialsSliderProps) {
     });
   };
 
-  const slideWidth = 100 / total;
-  const trackWidth = `${total * 100}%`;
-
   return (
-    <section className="bg-white py-20 text-[#0B0F14]">
-      <div className="mx-auto w-full max-w-5xl px-4 text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-[#9CA3AF]">
-          Testimonials
-        </p>
+    <section className="bg-background py-16 text-foreground md:py-24">
+      <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+            Testimonials
+          </p>
 
-        <h2 className="mt-3 text-3xl font-heading font-semibold">
-          {data.title}
-        </h2>
+          <h2 className="mt-3 text-3xl font-heading font-semibold tracking-tight md:text-4xl">
+            {data.title}
+          </h2>
+        </div>
 
-        <div className="mt-10 overflow-hidden">
+        {/* Slider */}
+        <div
+          className="mt-10 overflow-hidden"
+          role="region"
+          aria-live="polite"
+          aria-label="Customer testimonials"
+        >
           <div
             className="flex transition-transform duration-500 ease-out will-change-transform"
             style={{
-              // ✅ move by one slide width (percent of TRACK), not 100%
-              transform: `translate3d(-${index * slideWidth}%, 0, 0)`,
-              width: trackWidth,
+              width: `${total * 100}%`,
+              transform: `translate3d(-${index * (100 / total)}%, 0, 0)`,
             }}
           >
             {items.map((item) => (
               <div
                 key={`${item.name}-${item.company}`}
-                className="flex-shrink-0 px-4"
-                style={{ width: `${slideWidth}%` }} // each slide is 100/total % of track
+                className="w-full flex-shrink-0"
+                style={{ width: `${100 / total}%` }}
               >
-                <div className="mx-auto max-w-3xl rounded-[32px] border border-black/10 bg-[#F7F8FB] p-8 shadow-[0_25px_60px_rgba(15,23,42,0.05)]">
-                  <p className="text-lg text-[#0F172A]">“{item.quote}”</p>
+                {/* Make the card full-width of the section container */}
+                <div className="w-full rounded-[32px] border border-border bg-card p-8 text-left shadow-[0_25px_60px_rgba(15,23,42,0.06)] md:p-10">
+                  <p className="text-lg leading-relaxed text-foreground md:text-xl">
+                    &ldquo;{item.quote}&rdquo;
+                  </p>
 
-                  <div className="mt-6 flex flex-col items-center gap-3 text-sm text-[#4B5563] sm:flex-row sm:justify-center">
-                    <div className="relative h-12 w-12 overflow-hidden rounded-full border border-black/10 bg-gradient-to-br from-[#f4f6fb] to-white">
+                  <div className="mt-6 flex flex-col items-start gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center">
+                    <div className="relative h-12 w-12 overflow-hidden rounded-full border border-border/60 bg-muted">
                       {item.avatar ? (
                         <Image
                           src={item.avatar}
                           alt={item.name}
                           fill
-                          className="object-cover"
+                          className="object-contain p-2"
                         />
                       ) : null}
                     </div>
 
-                    <div className="text-center sm:text-left">
-                      <p className="text-base font-semibold text-[#0B0F14]">
+                    <div>
+                      <p className="text-base font-semibold text-foreground">
                         {item.name}
                       </p>
                       <p>
@@ -83,23 +91,24 @@ export function TestimonialsSlider({ data }: TestimonialsSliderProps) {
           </div>
         </div>
 
+        {/* Controls */}
         <div className="mt-6 flex items-center justify-center gap-3">
           <button
             type="button"
-            className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B0F14]/20"
+            className="rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
             onClick={() => goTo(-1)}
             aria-label="Previous testimonial"
           >
             ←
           </button>
 
-          <span className="text-sm text-[#6B7280]">
+          <span className="text-sm text-muted-foreground">
             {index + 1} / {total}
           </span>
 
           <button
             type="button"
-            className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B0F14]/20"
+            className="rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
             onClick={() => goTo(1)}
             aria-label="Next testimonial"
           >

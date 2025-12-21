@@ -17,25 +17,37 @@ export function FeaturedInsights({ posts, featured }: FeaturedInsightsProps) {
   }
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-16 text-white">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-white/50">
-            Highlights
-          </p>
-          <h2 className="mt-2 text-3xl font-heading font-semibold">Featured</h2>
+    <section className="border-b border-border bg-background py-16 md:py-20">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 md:gap-10 md:px-6">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold text-muted-foreground">
+              Featured research
+            </p>
+            <h2 className="text-3xl font-heading font-semibold tracking-tight md:text-4xl">
+              Highlights from the library
+            </h2>
+            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              A rotating set of briefs on diligence, investor discovery, and AI-assisted workflows. Each post includes templates, proof points, and next steps.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="mt-10 grid gap-8 lg:grid-cols-12">
-        <PostCard
-          post={primary}
-          variant="large"
-          className="h-full lg:col-span-7"
-        />
-        <div className="grid gap-6 lg:col-span-5 lg:grid-rows-2">
-          {secondaryPosts.map((post) => (
-            <PostCard key={post.id} post={post} variant="small" className="h-full" />
-          ))}
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-12">
+          <PostCard
+            post={primary}
+            variant="large"
+            className="h-full lg:col-span-7"
+          />
+          <div className="grid gap-6 md:gap-8 lg:col-span-5 lg:grid-rows-2">
+            {secondaryPosts.map((post) => (
+              <PostCard
+                key={post.id}
+                post={post}
+                variant="small"
+                className="h-full"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

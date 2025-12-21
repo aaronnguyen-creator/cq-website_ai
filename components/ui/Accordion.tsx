@@ -23,10 +23,12 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={item.id}
-            className="rounded-2xl border border-white/10 bg-white/5 p-4 text-white"
+            className="rounded-2xl border border-border bg-muted/60 p-4 text-foreground shadow-[0_20px_60px_rgba(15,23,42,0.05)]"
           >
             <button
-              className="flex w-full items-center justify-between text-left text-base font-semibold"
+              id={`${item.id}-trigger`}
+              type="button"
+              className="flex w-full items-center justify-between rounded-xl px-2 py-1 text-left text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               aria-expanded={isOpen}
               aria-controls={`${item.id}-content`}
               onClick={() => setActiveId(isOpen ? null : item.id)}
@@ -51,8 +53,8 @@ export function Accordion({ items }: AccordionProps) {
                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               )}
             >
-              <div className="overflow-hidden text-sm text-white/70">
-                <p className="pt-3">{item.answer}</p>
+              <div className="overflow-hidden text-sm text-muted-foreground">
+                <p className="pt-3 leading-relaxed">{item.answer}</p>
               </div>
             </div>
           </div>

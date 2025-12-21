@@ -9,14 +9,16 @@ export function CTABand({ data }: CTABandProps) {
   return (
     <section
       id={data.id}
-      className="mx-auto w-full max-w-5xl px-4 py-20 text-white"
+      className="mx-auto w-full max-w-6xl px-4 md:px-6 py-16 md:py-24"
     >
-      <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-white/20 to-transparent p-8 text-center shadow-[0_50px_120px_rgba(0,0,0,0.45)] sm:p-12">
-        <h3 className="text-3xl font-heading font-semibold sm:text-4xl">
+      <div className="rounded-[32px] border border-border bg-gradient-to-r from-primary/10 via-transparent to-transparent p-8 text-center shadow-[0_50px_120px_rgba(15,23,42,0.15)] sm:p-12">
+        <h3 className="text-3xl font-heading font-semibold tracking-tight sm:text-4xl">
           {data.heading}
         </h3>
-        <p className="mt-4 text-white/75">{data.body}</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          {data.body}
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button href={data.primaryCta.href}>{data.primaryCta.label}</Button>
           {data.secondaryCta ? (
             <Button href={data.secondaryCta.href} variant="secondary">

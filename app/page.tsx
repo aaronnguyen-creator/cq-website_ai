@@ -9,7 +9,7 @@ import { homeContent } from "@/lib/home/homeContent";
 
 export default function Home() {
   return (
-    <div className="bg-white text-[#0B0F14]">
+    <div className="bg-background text-foreground">
       <main>
         <HomeHero data={homeContent.hero} />
         <BenefitsIntro data={homeContent.benefitsIntro} />
