@@ -260,7 +260,7 @@ export const insightsPosts: Post[] = [
     readingTime: "4 min read",
     category: "Communications",
     tags: ["community", "investor-relations"],
-    image: { src: "/images/insights/mock-7.png", alt: "Newsletter planning" },
+    image: { src: "/images/insights/email_playbooks.png", alt: "Newsletter planning" },
     contentBlocks: baseBlocks(
       "Segment recipients by mandate interest, highlight the two metrics that moved, and keep CTAs action-oriented so they know exactly how to respond."
     ),
@@ -277,7 +277,7 @@ export const insightsPosts: Post[] = [
     readingTime: "6 min read",
     category: "Manager Discovery",
     tags: ["signals", "predictive"],
-    image: { src: "/images/insights/mock-8.png", alt: "Signal visualization" },
+    image: { src: "/images/insights/signals.png", alt: "Signal visualization" },
     contentBlocks: baseBlocks(
       "Look for operating partner hires, outbound references, and sudden data room refreshes—those are leading indicators a fund is preparing to market."
     ),
@@ -294,7 +294,7 @@ export const insightsPosts: Post[] = [
     readingTime: "5 min read",
     category: "Data",
     tags: ["indexing", "data-engineering"],
-    image: { src: "/images/insights/mock-9.png", alt: "Data indexing graphs" },
+    image: { src: "/images/insights/alternative-data.png", alt: "Data indexing graphs" },
     contentBlocks: baseBlocks(
       "Use semantic tagging and OCR transcripts to make every diligence answer searchable for future mandates."
     ),
@@ -311,7 +311,7 @@ export const insightsPosts: Post[] = [
     readingTime: "8 min read",
     category: "AI Workflows",
     tags: ["copilots", "evaluation"],
-    image: { src: "/images/insights/mock-10.png", alt: "AI assistant UI" },
+    image: { src: "/images/insights/document_ai.png", alt: "AI assistant UI" },
     contentBlocks: baseBlocks(
       "Score copilots on sourcing accuracy, privacy controls, and transparency so stakeholders trust the recommendations."
     ),
@@ -328,7 +328,7 @@ export const insightsPosts: Post[] = [
     readingTime: "6 min read",
     category: "Compliance",
     tags: ["audit", "ops"],
-    image: { src: "/images/insights/mock-11.png", alt: "Secure document sharing" },
+    image: { src: "/images/insights/compliance_ready.png", alt: "Secure document sharing" },
     contentBlocks: baseBlocks(
       "Centralize memos, apply retention policies, and log every AI-generated answer so compliance teams have a full audit trail."
     ),
@@ -345,7 +345,7 @@ export const insightsPosts: Post[] = [
     readingTime: "10 min read",
     category: "Strategy",
     tags: ["operating-model"],
-    image: { src: "/images/insights/mock-12.png", alt: "Operating system workflow" },
+    image: { src: "/images/insights/allocator_operating_system.png", alt: "Operating system workflow" },
     contentBlocks: baseBlocks(
       "Adopt shared taxonomies, centralize source data, and align KPIs so investment, IR, and ops stay synchronized."
     ),

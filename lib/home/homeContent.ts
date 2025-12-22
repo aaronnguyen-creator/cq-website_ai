@@ -16,7 +16,7 @@ export const homeContent: HomeContent = {
       { name: "Institutional", src: "/logo-5.svg" },
     ],
     heroImage: {
-      src: "/images/home/Dummy-My-Deal-1.png",
+      src: "/images/home/CQ_platform.png",
       alt: "CQ fundraising workspace preview",
     },
   },
@@ -94,7 +94,7 @@ export const homeContent: HomeContent = {
         title: "Structured deal visibility",
         description: "View mandates, tasks, and blockers at a glance.",
         image: {
-          src: "/images/home/outcome-1.svg",
+          src: "/images/home/Structured_deal_visibility.png",
           alt: "Structured deal visibility",
         },
       },
@@ -121,7 +121,7 @@ export const homeContent: HomeContent = {
         description:
           "Invite LPs with guardrails, audit logs, and message history in one place.",
         image: {
-          src: "/images/home/outcome-4.svg",
+          src: "/images/home/Secure_collaboration.png",
           alt: "Secure collaboration",
         },
       },
@@ -129,13 +129,13 @@ export const homeContent: HomeContent = {
         title: "Faster memo creation",
         description:
           "Generate first drafts instantly and edit with your team's commentary.",
-        image: { src: "/images/home/outcome-5.svg", alt: "Memo creation" },
+        image: { src: "/images/home/Faster_memo_creation.png", alt: "Memo creation" },
       },
       {
         title: "Audit-ready history",
         description: "Retain updates, files, and approvals for every mandate.",
         image: {
-          src: "/images/home/outcome-6.svg",
+          src: "/images/home/Audit_ready.png",
           alt: "Audit-ready history",
         },
       },

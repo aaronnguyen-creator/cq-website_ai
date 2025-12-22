@@ -16,7 +16,7 @@ export const allocatorsContent: FeaturePageConfig = {
     primaryCta: { label: "Request a demo", href: "/request-demo" },
     secondaryCta: { label: "Join waitlist", href: "/waitlist" },
     image: {
-      src: "/images/home/Dummy-My-Deal-1.png",
+      src: "/images/home/CQ_platform.png",
       alt: "CQ workspace preview",
     },
   },
