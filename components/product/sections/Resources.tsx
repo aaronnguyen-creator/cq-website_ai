@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import type { ResourcesContent } from "@/lib/product/featurePageTypes";
 import { cn } from "@/lib/utils";
+import { insightsPosts } from "@/lib/insights/data";
 
 type ResourcesProps = {
   data: ResourcesContent;
@@ -22,6 +23,25 @@ function formatDate(dateInput?: string) {
 }
 
 export function Resources({ data }: ResourcesProps) {
+  const shouldUseInsights = data.useLatestInsights;
+
+  const resolvedItems = shouldUseInsights
+    ? [...insightsPosts]
+        .sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        )
+        .slice(0, data.count ?? 3)
+        .map((post) => ({
+          title: post.title,
+          description: post.excerpt,
+          category: post.category,
+          readingTime: post.readingTime,
+          date: post.date,
+          href: `/insights/${post.slug}`,
+          image: post.image,
+        }))
+    : data.items ?? [];
+
   return (
     <section id={data.id} className="bg-background py-16 text-foreground md:py-24">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
@@ -36,7 +56,7 @@ export function Resources({ data }: ResourcesProps) {
           </div>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {data.items.map((item) => {
+          {resolvedItems.map((item) => {
             const meta = [item.category, item.readingTime]
               .filter(Boolean)
               .join(" • ");

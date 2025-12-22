@@ -118,6 +118,8 @@ export type ResourcesContent = {
   id: string;
   heading: string;
   items: ResourceLink[];
+  useLatestInsights?: boolean;
+  count?: number;
 };
 
 export type FAQItem = {

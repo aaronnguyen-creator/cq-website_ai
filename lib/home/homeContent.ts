@@ -35,7 +35,7 @@ export const homeContent: HomeContent = {
       {
         title: "Investor intelligence surfaces context before every conversation.",
         image: {
-          src: "/images/features/deal-context.jpg",
+          src: "/images/features/deal-context.png",
           alt: "Investor intelligence view",
         },
       },
@@ -103,7 +103,7 @@ export const homeContent: HomeContent = {
         description:
           "Filter allocators by mandate fit, geography, and relationship history.",
         image: {
-          src: "/images/home/outcome-2.svg",
+          src: "/images/home/Sharper investor targeting.png",
           alt: "Investor targeting tools",
         },
       },
@@ -112,7 +112,7 @@ export const homeContent: HomeContent = {
         description:
           "Turn decks and data rooms into instant answers, summaries, and memos.",
         image: {
-          src: "/images/home/outcome-3.svg",
+          src: "/images/home/AI-assisted diligence.png",
           alt: "AI diligence assistant",
         },
       },

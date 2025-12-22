@@ -19,7 +19,7 @@ export const insightsPosts: Post[] = [
     readingTime: "6 min read",
     category: "Diligence",
     tags: ["workflow", "process", "playbook"],
-    image: { src: "/images/insights/mock-1.png", alt: "Investors reviewing data" },
+    image: { src: "/images/insights/digital-diligence.png", alt: "Investors reviewing data" },
     contentBlocks: [
       { type: "h2", text: "Standardize your intake" },
       {
@@ -114,7 +114,7 @@ export const insightsPosts: Post[] = [
     readingTime: "8 min read",
     category: "Manager Discovery",
     tags: ["mandates", "signals"],
-    image: { src: "/images/insights/mock-2.png", alt: "Analytics dashboard" },
+    image: { src: "/images/insights/Mandates.png", alt: "Analytics dashboard" },
     contentBlocks: [
       { type: "h2", text: "Design mandates that learn" },
       {
@@ -164,7 +164,7 @@ export const insightsPosts: Post[] = [
     readingTime: "5 min read",
     category: "Collaboration",
     tags: ["analytics", "relationships"],
-    image: { src: "/images/insights/mock-3.png", alt: "Team collaboration" },
+    image: { src: "/images/insights/metrics.jpg", alt: "Team collaboration" },
     contentBlocks: [
       { type: "h2", text: "Define shared outcomes" },
       {
@@ -209,7 +209,7 @@ export const insightsPosts: Post[] = [
     readingTime: "4 min read",
     category: "AI Workflows",
     tags: ["data rooms", "security"],
-    image: { src: "/images/insights/mock-4.png", alt: "Data room view" },
+    image: { src: "/images/insights/ai-dataroom.jpg", alt: "Data room view" },
     contentBlocks: baseBlocks(
       "Give every file a consistent naming convention, ensure OCR quality on scans, and use permissions that match diligence stages so AI copilots can cite the right source."
     ),
@@ -226,7 +226,7 @@ export const insightsPosts: Post[] = [
     readingTime: "7 min read",
     category: "Meetings",
     tags: ["briefings", "ops"],
-    image: { src: "/images/insights/mock-5.png", alt: "Meeting preparation" },
+    image: { src: "/images/insights/allocator briefings.jpg", alt: "Meeting preparation" },
     contentBlocks: baseBlocks(
       "Bundle macro notes, deal history, and outstanding diligence questions into a single packet so the onsite conversation focuses on decisions, not discovery."
     ),
@@ -243,7 +243,7 @@ export const insightsPosts: Post[] = [
     readingTime: "9 min read",
     category: "Strategy",
     tags: ["governance", "visibility"],
-    image: { src: "/images/insights/mock-6.png", alt: "Portfolio control tower" },
+    image: { src: "/images/insights/investment-teams.jpg", alt: "Portfolio control tower" },
     contentBlocks: baseBlocks(
       "Bring opportunity pipelines, diligence workloads, and LP communications into a single live workspace so executives can unblock teams faster."
     ),

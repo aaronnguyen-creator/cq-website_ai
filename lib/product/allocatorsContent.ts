@@ -207,53 +207,9 @@ export const allocatorsContent: FeaturePageConfig = {
   resources: {
     id: "resources",
     heading: "Resources",
-    items: [
-      {
-        title: "Allocator diligence workflow guide",
-        href: "/resources/allocator-workflow",
-        description:
-          "Structure your intake, tasking, and approvals with a repeatable diligence checklist.",
-        category: "Guide",
-        date: "2025-01-05",
-        readingTime: "6 min read",
-        image: {
-          src: "/images/home/outcome-1.svg",
-          alt: "Allocator diligence workflow guide",
-          width: 640,
-          height: 360,
-        },
-      },
-      {
-        title: "Define mandates for manager discovery",
-        href: "/resources/define-mandates",
-        description:
-          "Align sourcing with IC criteria using mandate cards and saved segments.",
-        category: "Playbook",
-        date: "2025-02-12",
-        readingTime: "5 min read",
-        image: {
-          src: "/images/home/outcome-2.svg",
-          alt: "Mandate definition playbook",
-          width: 640,
-          height: 360,
-        },
-      },
-      {
-        title: "Security and auditability overview",
-        href: "/resources/security-overview",
-        description:
-          "Review CQ’s controls for permissions, encryption, and audit logs.",
-        category: "Security",
-        date: "2024-12-01",
-        readingTime: "4 min read",
-        image: {
-          src: "/images/home/outcome-4.svg",
-          alt: "Security and auditability overview",
-          width: 640,
-          height: 360,
-        },
-      },
-    ],
+    useLatestInsights: true,
+    count: 3,
+    items: [],
   },
   faq: {
     id: "faq",

@@ -25,14 +25,6 @@ export function InsightsHero() {
           </Button>
         </div>
         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-primary" aria-hidden />
-            Updated weekly
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-primary/60" aria-hidden />
-            Diligence, AI, and workflow playbooks
-          </div>
         </div>
       </div>
     </section>

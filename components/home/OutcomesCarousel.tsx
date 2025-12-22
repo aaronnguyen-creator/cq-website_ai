@@ -35,6 +35,7 @@ export function OutcomesCarousel({ data }: OutcomesCarouselProps) {
               {data.description}
             </p>
           </div>
+
           <div className="hidden gap-3 sm:flex">
             <button
               type="button"
@@ -54,6 +55,7 @@ export function OutcomesCarousel({ data }: OutcomesCarouselProps) {
             </button>
           </div>
         </div>
+
         <div
           ref={scrollRef}
           tabIndex={0}
@@ -65,19 +67,22 @@ export function OutcomesCarousel({ data }: OutcomesCarouselProps) {
               key={card.title}
               className="min-w-[280px] snap-start rounded-2xl border border-border bg-card p-6 shadow-[0_20px_50px_rgba(15,23,42,0.05)] sm:min-w-[320px] lg:min-w-[360px]"
             >
-              <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-border/60 bg-muted">
+              {/* Bigger image area + no padding that shrinks the image */}
+              <div className="relative w-full overflow-hidden rounded-2xl border border-border/60 bg-muted aspect-[16/9] md:aspect-[4/3]">
                 {card.image?.src ? (
                   <Image
                     src={card.image.src}
                     alt={card.image.alt}
                     fill
-                    sizes="(max-width: 768px) 80vw, 360px"
-                    className="object-contain p-6"
+                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 320px, 360px"
+                    className="object-contain"
+                    priority={false}
                   />
                 ) : (
                   <div className="h-full w-full" />
                 )}
               </div>
+
               <h3 className="mt-4 text-xl font-heading font-semibold">
                 {card.title}
               </h3>

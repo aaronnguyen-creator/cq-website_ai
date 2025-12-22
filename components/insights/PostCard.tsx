@@ -101,7 +101,12 @@ export function PostCard({
   const toneStyle = toneStyles[tone] ?? toneStyles.light;
 
   // --- Normalize image (supports string OR {src, alt}) ---
-  const imageRaw: any = (post as any).image ?? (post as any).coverImage ?? "";
+  type PostWithCover = Post & {
+    coverImage?: { src: string; alt: string } | string;
+    image?: { src: string; alt: string } | string;
+  };
+  const extendedPost = post as PostWithCover;
+  const imageRaw = extendedPost.image ?? extendedPost.coverImage ?? "";
   const imageSrc =
     typeof imageRaw === "string" ? imageRaw : imageRaw?.src ?? "";
   const imageAlt =

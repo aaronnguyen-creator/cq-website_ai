@@ -34,7 +34,7 @@ export const aboutContent: AboutContent = {
         description:
           "Surface AI copilots, investor history, and approvals directly inside the workspace for faster calls.",
         image: {
-          src: "/images/features/deal-context.jpg",
+          src: "/images/features/deal-context.png",
           alt: "Decision context visualization",
         },
       },
@@ -101,7 +101,7 @@ export const aboutContent: AboutContent = {
       title: "Founder & CEO",
       bio: "Erik Ford pairs decades of capital markets leadership with builder discipline—scaling companies, stewarding investor capital, and mentoring the next generation of operators.",
       image: {
-        src: "/images/about/erik-ford.png",
+        src: "/images/about/erik-ford.jpg",
         alt: "Portrait of Erik Ford",
       }, // Replace with approved headshot when available.
       highlights: [

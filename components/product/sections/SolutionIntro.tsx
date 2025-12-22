@@ -158,11 +158,6 @@ export function SolutionIntro({ data }: SolutionIntroProps) {
                 />
               ) : null}
             </div>
-            {activeFeature ? (
-              <p className="mt-4 text-sm text-muted-foreground">
-                Showing: {activeFeature.title}
-              </p>
-            ) : null}
           </div>
         </div>
       </div>
