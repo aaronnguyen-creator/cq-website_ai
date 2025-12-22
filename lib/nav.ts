@@ -82,7 +82,7 @@ export const navConfig: {
         {
           title: "Glossary",
           description: "Modern investing terms and definitions, curated for teams.",
-          href: "/grossary",
+          href: "/glossary",
         },
         {
           title: "Database",

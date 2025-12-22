@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
+// Keep Inter available (optional). Useful as a fallback or for specific UI cases.
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+// ✅ CQ brand font (OTF) loaded locally
+const cqFont = localFont({
+  src: [{ path: "./fonts/SF-Pro-Display-Regular.otf", weight: "400", style: "normal" }],
+  variable: "--font-cq",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="en" className={`${cqFont.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

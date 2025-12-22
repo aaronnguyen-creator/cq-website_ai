@@ -11,8 +11,11 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        // Body / default text
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        heading: ["Georgia", "Times New Roman", "serif"],
+
+        // Headings
+        heading: ["var(--font-cq)", "var(--font-inter)", ...defaultTheme.fontFamily.sans],
       },
     },
   },
