@@ -4,46 +4,102 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CQ Brand Tokens (raw) + shadcn/ui semantic tokens (HSL)                      */
+/* Source of truth: BRAND_GUIDE_VISUAL_TOKENS.md                               */
+/* -------------------------------------------------------------------------- */
+
 :root {
+  /* CQ raw tokens (hex/rgba) */
+  --cq-bg: #ffffff;
+  --cq-ink: #0b0f14;
+  --cq-surface: #f7f8fb;
+  --cq-border: rgba(11, 15, 20, 0.1);
+  --cq-text-subtle: rgba(11, 15, 20, 0.7);
+
+  --cq-primary: #3b40f3;
+  --cq-primary-hover: rgba(59, 64, 243, 0.9);
+  --cq-primary-foreground: #ffffff;
+
+  --cq-tint-blue: #d6e7fd;
+  --cq-success: #86c71f;
+  --cq-danger: #dc2626;
+  --cq-warning: #f59e0b;
+
+  /* shadcn/ui semantic tokens (HSL) */
   --background: 0 0% 100%;
   --foreground: 220 26% 6%;
+
   --card: 225 33% 98%;
   --card-foreground: 220 26% 6%;
+
   --popover: 0 0% 100%;
   --popover-foreground: 220 26% 6%;
+
   --primary: 238 88% 59%;
   --primary-foreground: 0 0% 100%;
+
   --secondary: 225 20% 96%;
   --secondary-foreground: 220 26% 6%;
+
   --muted: 225 20% 96%;
   --muted-foreground: 220 9% 46%;
+
   --accent: 225 20% 96%;
   --accent-foreground: 220 26% 6%;
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
+
   --border: 220 13% 91%;
   --input: 220 13% 91%;
   --ring: 238 88% 59%;
-  --radius: 1rem;
+
+  --radius: 1rem; /* 16px */
 }
 
 .dark {
+  /* CQ raw tokens (dark) */
+  --cq-bg: #050608;
+  --cq-ink: #ffffff;
+  --cq-surface: rgba(255, 255, 255, 0.06);
+  --cq-border: rgba(255, 255, 255, 0.1);
+  --cq-text-subtle: rgba(255, 255, 255, 0.7);
+
+  --cq-primary: #3b40f3;
+  --cq-primary-hover: rgba(59, 64, 243, 0.9);
+  --cq-primary-foreground: #ffffff;
+
+  /* shadcn/ui semantic tokens (HSL) */
   --background: 240 9% 2%;
   --foreground: 0 0% 100%;
+
   --card: 0 0% 6%;
   --card-foreground: 0 0% 100%;
+
   --popover: 0 0% 6%;
   --popover-foreground: 0 0% 100%;
+
   --primary: 238 88% 59%;
   --primary-foreground: 0 0% 100%;
+
   --secondary: 0 0% 10%;
   --secondary-foreground: 0 0% 100%;
+
   --muted: 0 0% 10%;
   --muted-foreground: 0 0% 70%;
+
   --accent: 0 0% 10%;
   --accent-foreground: 0 0% 100%;
+
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 100%;
+
   --border: 0 0% 12%;
   --input: 0 0% 12%;
   --ring: 238 88% 59%;
@@ -70,6 +126,8 @@ html {
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --radius: var(--radius);
+
+  /* Typography (keep existing CQ setup) */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-heading: Georgia, "Times New Roman", serif;

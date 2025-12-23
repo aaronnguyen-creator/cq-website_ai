@@ -11,7 +11,9 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary text-primary-foreground border border-transparent shadow-[0_25px_60px_rgba(15,23,42,0.12)] hover:bg-primary/90",
-        secondary:
+        outline:
+          "border border-border bg-transparent text-foreground shadow-none hover:bg-muted",
+          secondary:
           "border border-border bg-background text-foreground shadow-none hover:bg-muted",
         ghost: "bg-transparent text-foreground hover:bg-muted/60",
         onDark:

@@ -7,6 +7,7 @@ export type NavItem = {
     title: string;
     description: string;
     href: string;
+    disabled?: boolean;
   }>;
 };
 
@@ -14,11 +15,13 @@ export type NavCta = {
   label: string;
   href: string;
   variant: "primary" | "secondary";
+  disabled?: boolean;
 };
 
 export const navConfig: {
   links: NavItem[];
   ctas: NavCta[];
+  disabled?: boolean;
 } = {
   links: [
     {
@@ -35,31 +38,37 @@ export const navConfig: {
           title: "Asset Managers",
           description: "Track fundraising workflows and investor engagement in one place.",
           href: "/product/asset-managers",
+          disabled: true,
         },
         {
           title: "Data Room",
           description: "Securely share diligence-ready materials with investors.",
           href: "/product/data-room",
+          disabled: true,
         },
         {
           title: "Due Diligence",
           description: "Coordinate diligence requests and stakeholders with structured checklists.",
           href: "/product/due-diligence",
+          disabled: true,
         },
         {
           title: "Investor Database",
           description: "Search global LP profiles, mandates, and contact data.",
           href: "/product/investor-database",
+          disabled: true,
         },
         {
           title: "Investment Memo",
           description: "Create consistent memos with collaborative templates.",
           href: "/product/investment-memo",
+          disabled: true,
         },
         {
           title: "Pitch Deck",
           description: "Build interactive decks powered by live data and metrics.",
           href: "/product/pitch-deck",
+          disabled: true,
         },
       ],
     },
@@ -93,6 +102,7 @@ export const navConfig: {
           title: "The Fund One Handbook",
           description: "Step-by-step playbook for raising and operating your first fund.",
           href: "/fund-one-handbook",
+          disabled: true,
         },
       ],
     },
@@ -118,10 +128,11 @@ export const navConfig: {
       label: "Login",
       href: "/login",
       variant: "secondary",
+      disabled: true,
     },
     {
       label: "Request a demo",
-      href: "/request-demo",
+      href: "/contact",
       variant: "primary",
     },
   ],

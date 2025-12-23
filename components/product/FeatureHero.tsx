@@ -17,7 +17,7 @@ export function FeatureHero({ data }: FeatureHeroProps) {
       id={data.id}
       className="bg-background px-4 py-16 text-foreground md:px-6 md:py-24"
     >
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-16">
         <div className="flex-1 space-y-6">
           <p className="text-sm uppercase tracking-[0.35em] text-muted-foreground">
             {data.eyebrow}
@@ -39,7 +39,7 @@ export function FeatureHero({ data }: FeatureHeroProps) {
         </div>
         <div className="flex-1 w-full">
           <div className="rounded-[32px] border border-border bg-[#050608] p-4 md:p-5">
-            <div className="relative h-[420px] w-full overflow-hidden rounded-[28px] border border-border bg-gradient-to-b from-black/20 via-black/60 to-black md:h-[520px]">
+            <div className="relative h-[420px] w-full overflow-hidden rounded-[32px] border border-border bg-gradient-to-b from-black/20 via-black/60 to-black md:h-[520px]">
               {heroImage?.src ? (
                 <Image
                   src={heroImage.src}

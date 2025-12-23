@@ -22,6 +22,8 @@ const linkTriggerClasses =
 const dropdownCardClasses =
   "rounded-2xl border border-border bg-muted/40 p-4 transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30";
 
+const disabledLinkClasses = "pointer-events-none cursor-not-allowed";
+
 const MobileNav = ({ links, ctas }: { links: NavItem[]; ctas: NavCta[] }) => (
   <Sheet>
     <SheetTrigger asChild>
@@ -47,6 +49,7 @@ const MobileNav = ({ links, ctas }: { links: NavItem[]; ctas: NavCta[] }) => (
           Navigate the CQ platform.
         </p>
       </div>
+
       <nav
         aria-label="Mobile navigation"
         className="flex-1 space-y-6 overflow-y-auto"
@@ -55,7 +58,10 @@ const MobileNav = ({ links, ctas }: { links: NavItem[]; ctas: NavCta[] }) => (
           <div key={link.title} className="space-y-3">
             {link.disabled ? (
               <span
-                className="block text-base font-heading text-muted-foreground"
+                className={cn(
+                  "block text-base font-heading text-foreground",
+                  disabledLinkClasses
+                )}
                 aria-disabled="true"
               >
                 {link.title}
@@ -70,41 +76,69 @@ const MobileNav = ({ links, ctas }: { links: NavItem[]; ctas: NavCta[] }) => (
                 </Link>
               </SheetClose>
             )}
-            <p className="text-sm text-muted-foreground">
-              {link.description}
-            </p>
+
+            <p className="text-sm text-muted-foreground">{link.description}</p>
+
             {link.items?.length ? (
               <div className="space-y-3 border-l border-border/70 pl-4">
-                {link.items.map((sub) => (
-                  <SheetClose asChild key={sub.href}>
-                    <Link
-                      href={sub.href}
-                      className="block rounded-2xl border border-border bg-card/80 px-4 py-3 text-sm text-foreground transition hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
+                {link.items.map((sub) =>
+                  sub.disabled ? (
+                    <div
+                      key={sub.href}
+                      className={cn(
+                        "block rounded-2xl border border-border bg-card/80 px-4 py-3 text-sm text-foreground transition hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30",
+                        disabledLinkClasses
+                      )}
+                      aria-disabled="true"
                     >
                       <span className="font-semibold">{sub.title}</span>
                       <span className="mt-1 block text-xs text-muted-foreground">
                         {sub.description}
                       </span>
-                    </Link>
-                  </SheetClose>
-                ))}
+                    </div>
+                  ) : (
+                    <SheetClose asChild key={sub.href}>
+                      <Link
+                        href={sub.href}
+                        className="block rounded-2xl border border-border bg-card/80 px-4 py-3 text-sm text-foreground transition hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
+                      >
+                        <span className="font-semibold">{sub.title}</span>
+                        <span className="mt-1 block text-xs text-muted-foreground">
+                          {sub.description}
+                        </span>
+                      </Link>
+                    </SheetClose>
+                  )
+                )}
               </div>
             ) : null}
           </div>
         ))}
       </nav>
+
       <div className="space-y-3">
-        {ctas.map((cta) => (
-          <SheetClose asChild key={cta.label}>
+        {ctas.map((cta) =>
+          cta.disabled ? (
             <Button
-              asChild
+              key={cta.label}
               variant={cta.variant === "primary" ? "default" : "secondary"}
-              className="w-full"
+              className={cn("w-full", disabledLinkClasses)}
+              aria-disabled="true"
             >
-              <Link href={cta.href}>{cta.label}</Link>
+              {cta.label}
             </Button>
-          </SheetClose>
-        ))}
+          ) : (
+            <SheetClose asChild key={cta.label}>
+              <Button
+                asChild
+                variant={cta.variant === "primary" ? "default" : "secondary"}
+                className="w-full"
+              >
+                <Link href={cta.href}>{cta.label}</Link>
+              </Button>
+            </SheetClose>
+          )
+        )}
       </div>
     </SheetContent>
   </Sheet>
@@ -178,7 +212,9 @@ export function SiteHeader() {
                       <ChevronDown
                         className={cn(
                           "h-4 w-4 transition duration-200",
-                          isActive ? "rotate-180 text-foreground" : "text-foreground/60"
+                          isActive
+                            ? "rotate-180 text-foreground"
+                            : "text-foreground/60"
                         )}
                         aria-hidden="true"
                       />
@@ -186,20 +222,19 @@ export function SiteHeader() {
                   </div>
                 );
               }
+
               if (item.disabled) {
                 return (
                   <span
                     key={item.title}
-                    className={cn(
-                      linkTriggerClasses,
-                      "cursor-not-allowed text-muted-foreground"
-                    )}
+                    className={cn(linkTriggerClasses, disabledLinkClasses)}
                     aria-disabled="true"
                   >
                     {item.title}
                   </span>
                 );
               }
+
               return (
                 <Link
                   key={item.title}
@@ -215,19 +250,34 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            {ctas.map((cta) => (
-              <Button
-                key={cta.label}
-                asChild
-                variant={cta.variant === "primary" ? "default" : "secondary"}
-                className={cn(
-                  "px-6 py-2 text-sm font-semibold",
-                  cta.variant === "primary" && "min-w-[160px]"
-                )}
-              >
-                <Link href={cta.href}>{cta.label}</Link>
-              </Button>
-            ))}
+            {ctas.map((cta) =>
+              cta.disabled ? (
+                <Button
+                  key={cta.label}
+                  variant={cta.variant === "primary" ? "default" : "secondary"}
+                  className={cn(
+                    "px-6 py-2 text-sm font-semibold",
+                    cta.variant === "primary" && "min-w-[160px]",
+                    disabledLinkClasses
+                  )}
+                  aria-disabled="true"
+                >
+                  {cta.label}
+                </Button>
+              ) : (
+                <Button
+                  key={cta.label}
+                  asChild
+                  variant={cta.variant === "primary" ? "default" : "secondary"}
+                  className={cn(
+                    "px-6 py-2 text-sm font-semibold",
+                    cta.variant === "primary" && "min-w-[160px]"
+                  )}
+                >
+                  <Link href={cta.href}>{cta.label}</Link>
+                </Button>
+              )
+            )}
           </div>
 
           {activeItem ? (
@@ -246,22 +296,38 @@ export function SiteHeader() {
                         {activeItem.description}
                       </p>
                     </div>
+
                     <div className="min-h-0 max-h-[60vh] overflow-auto pr-2">
                       <div className="grid gap-4 sm:grid-cols-2">
-                        {activeItem.items?.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            className={dropdownCardClasses}
-                          >
-                            <span className="text-base font-heading text-foreground">
-                              {subItem.title}
-                            </span>
-                            <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
-                              {subItem.description}
-                            </span>
-                          </Link>
-                        ))}
+                        {activeItem.items?.map((subItem) =>
+                          subItem.disabled ? (
+                            <div
+                              key={subItem.href}
+                              className={cn(dropdownCardClasses, disabledLinkClasses)}
+                              aria-disabled="true"
+                            >
+                              <span className="text-base font-heading text-foreground">
+                                {subItem.title}
+                              </span>
+                              <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
+                                {subItem.description}
+                              </span>
+                            </div>
+                          ) : (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              className={dropdownCardClasses}
+                            >
+                              <span className="text-base font-heading text-foreground">
+                                {subItem.title}
+                              </span>
+                              <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
+                                {subItem.description}
+                              </span>
+                            </Link>
+                          )
+                        )}
                       </div>
                     </div>
                   </div>

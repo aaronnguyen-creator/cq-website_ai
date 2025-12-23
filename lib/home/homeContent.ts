@@ -6,8 +6,8 @@ export const homeContent: HomeContent = {
     title: "Run fundraising with clarity.",
     description:
       "CQ centralizes investor discovery, diligence, and collaboration so alternative investment teams can move from outreach to close with less friction.",
-    primaryCta: { label: "Request a demo", href: "/request-demo" },
-    secondaryCta: { label: "Join the waitlist", href: "/waitlist" },
+    primaryCta: { label: "Request a demo", href: "/contact" },
+    secondaryCta: { label: "Join the waitlist", href: "/contact" },
     proofLabel: "Trusted by alternative investment teams",
     proofLogos: [
       { name: "Allocator Firm", src: "/logo-1.svg" },
@@ -182,8 +182,8 @@ export const homeContent: HomeContent = {
     title: "Ready to run fundraising with clarity?",
     description:
       "See how CQ brings investor targeting, diligence, and reporting into one finance-grade workspace.",
-    primaryCta: { label: "Request a demo", href: "/request-demo" },
-    secondaryCta: { label: "Join the waitlist", href: "/waitlist" },
+    primaryCta: { label: "Request a demo", href: "/contact" },
+    secondaryCta: { label: "Join the waitlist", href: "/contact" },
   },
   resources: {
     title: "Latest insights",

@@ -8,7 +8,7 @@ export const aboutContent: AboutContent = {
       "Centralize investor intelligence, diligence workflows, and approvals in one finance-grade operating system so every mandate moves forward decisively.",
     primaryCta: {
       label: "Request a demo",
-      href: "/request-demo",
+      href: "/contact",
     },
     secondaryCta: {
       label: "Contact us",
@@ -140,7 +140,7 @@ export const aboutContent: AboutContent = {
       "Give your fundraising and diligence teams a shared operating system with AI copilots, investor intelligence, and governance built in.",
     primaryCta: {
       label: "Request a demo",
-      href: "/request-demo",
+      href: "/contact",
     },
     secondaryCta: {
       label: "Contact us",

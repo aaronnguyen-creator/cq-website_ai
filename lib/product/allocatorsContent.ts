@@ -13,8 +13,8 @@ export const allocatorsContent: FeaturePageConfig = {
     title: "Run allocator diligence in one workspace.",
     description:
       "CQ centralizes mandates, manager discovery, and diligence collaboration so allocator teams can qualify managers faster with complete visibility.",
-    primaryCta: { label: "Request a demo", href: "/request-demo" },
-    secondaryCta: { label: "Join waitlist", href: "/waitlist" },
+    primaryCta: { label: "Request a demo", href: "/contact" },
+    secondaryCta: { label: "Join waitlist", href: "/contact" },
     image: {
       src: "/images/home/CQ_platform.png",
       alt: "CQ workspace preview",
@@ -170,8 +170,8 @@ export const allocatorsContent: FeaturePageConfig = {
     id: "cta-mid",
     heading: "Give your allocator team one source of truth.",
     body: "See how CQ standardizes manager intake, diligence, and reporting so nothing slips through inboxes.",
-    primaryCta: { label: "Request a demo", href: "/request-demo" },
-    secondaryCta: { label: "Join waitlist", href: "/waitlist" },
+    primaryCta: { label: "Request a demo", href: "/contact" },
+    secondaryCta: { label: "Join waitlist", href: "/contact" },
   },
   otherProducts: {
     id: "other-products",
