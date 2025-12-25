@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu } from "lucide-react";
 
-import { navConfig, type NavItem, type NavCta } from "@/lib/nav";
+import { navConfig, type NavLink, type NavCta, type ProductMenuItem, type ProductMenuColumn, type NavConfig } from "@/lib/nav";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/sheet";
 
 type DesktopLinkProps = {
-  item: NavItem;
+  item: NavLink;
   onSimpleHover?: () => void;
   isDark?: boolean;
 };
@@ -257,7 +257,7 @@ const MobileNav = ({
   links,
   ctas,
 }: {
-  links: NavItem[];
+  links: NavLink[];
   ctas: NavCta[];
 }) => {
   return (
