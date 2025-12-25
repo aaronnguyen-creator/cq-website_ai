@@ -1,163 +1,92 @@
+// lib/product/featurePageTypes.ts
+
+export type Media = {
+  type?: "image" | "video";
+  src: string;
+  alt?: string;
+};
+
 export type CTA = {
   label: string;
   href: string;
 };
 
-export type HeroImage = {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
+export type FeatureHeroConfig = {
+  eyebrow?: string; // small label pill e.g. "Fundraising Workflow"
+  title: string; // feature name
+  highlight?: string[]; // words/phrases to highlight in title
+  valueProp: string; // one-line value prop
+  primaryCta: CTA; // "Try Free"
+  secondaryCta?: CTA; // "See Full Platform"
+  media: Media; // screenshot/video
 };
 
-export type HeroContent = {
-  id: string;
-  eyebrow: string;
+export type ProblemCard = {
   title: string;
   description: string;
-  primaryCta: CTA;
-  secondaryCta?: CTA;
-  image: HeroImage;
 };
 
-export type TrustBarContent = {
-  id: string;
-  title: string;
-  logos: string[];
+export type ProblemConfig = {
+  eyebrow?: string;
+  title?: string;
+  subhead?: string;
+  cards: ProblemCard[]; // now 6
 };
 
-export type CustomerProofLogo = {
-  name: string;
-  src?: string;
-};
 
-export type CustomerProofContent = {
-  heading: string;
-  subheading?: string;
-  cta: CTA;
-  logos: CustomerProofLogo[];
-};
 
-export type ProblemContent = {
-  id: string;
-  heading: string;
-  items: Array<{
-    title: string;
-    body: string;
-  }>;
-};
-
-export type SolutionFeature = {
+export type HowItWorksStep = {
   title: string;
   description: string;
-  bullets?: string[];
-  image: HeroImage;
+  media?: Media; // UI screenshot per step
 };
 
-export type SolutionContent = {
-  id: string;
-  heading: string;
-  subheading: string;
-  body: string;
-  features: SolutionFeature[];
+export type HowItWorksConfig = {
+  title: string;
+  steps: HowItWorksStep[]; // 3-4 steps
 };
 
-export type ProofPillarsContent = {
-  id: string;
-  heading: string;
-  intro: string;
-  pillars: Array<{
-    title: string;
-    body: string;
-  }>;
+export type Capability = {
+  title: string;
+  description: string;
+  icon?: "filter" | "sparkles" | "shield" | "workflow" | "search" | "file" | "chart"; // simple enum for now
 };
 
-export type Testimonial = {
+export type CapabilitiesConfig = {
+  title: string;
+  items: Capability[]; // 4-6
+};
+
+export type WorkflowIntegrationConfig = {
+  title: string;
+  beforeTitle?: string; // "Before this step..."
+  before: string[];
+  afterTitle?: string; // "After this step..."
+  after: string[];
+};
+
+export type SocialProofConfig = {
   quote: string;
-  author: string;
-  role?: string;
+  name: string;
+  title: string;
+  company: string;
+  avatarSrc?: string;
 };
 
-export type TestimonialsContent = {
-  id: string;
-  heading: string;
-  items: Testimonial[];
-};
-
-export type CTABandContent = {
-  id: string;
-  heading: string;
-  body: string;
+export type FinalCTAConfig = {
+  title: string; // "Try Allocators Free"
+  description: string;
   primaryCta: CTA;
   secondaryCta?: CTA;
-};
-
-export type OtherProduct = {
-  title: string;
-  body: string;
-  href: string;
-};
-
-export type OtherProductsContent = {
-  id: string;
-  heading: string;
-  items: OtherProduct[];
-};
-
-export type ResourceLink = {
-  title: string;
-  href: string;
-  description?: string;
-  category?: string;
-  date?: string;
-  readingTime?: string;
-  image?: HeroImage;
-};
-
-export type ResourcesContent = {
-  id: string;
-  heading: string;
-  items: ResourceLink[];
-  useLatestInsights?: boolean;
-  count?: number;
-};
-
-export type FAQItem = {
-  question: string;
-  answer: string;
-};
-
-export type FAQContent = {
-  id: string;
-  heading: string;
-  items: FAQItem[];
-};
-
-export type FinalCTAContent = {
-  id: string;
-  heading: string;
-  body: string;
-  primaryCta: CTA;
-  secondaryCta?: CTA;
-};
-
-export type NavAnchor = {
-  id: string;
-  label: string;
 };
 
 export type FeaturePageConfig = {
-  navAnchors: NavAnchor[];
-  hero: HeroContent;
-  trustBar?: TrustBarContent;
-  customerProof?: CustomerProofContent;
-  problem: ProblemContent;
-  solution: SolutionContent;
-  proof: ProofPillarsContent;
-  testimonials?: TestimonialsContent;
-  ctaBand: CTABandContent;
-  otherProducts: OtherProductsContent;
-  resources: ResourcesContent;
-  faq: FAQContent;
-  finalCta: FinalCTAContent;
+  slug: string;
+  hero: FeatureHeroConfig;
+  problem: ProblemConfig;
+  howItWorks: HowItWorksConfig;
+  capabilities: CapabilitiesConfig;
+  workflowIntegration: WorkflowIntegrationConfig;
+  socialProof: SocialProofConfig;
+  finalCta: FinalCTAConfig;
 };

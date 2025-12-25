@@ -1,14 +1,23 @@
-export type NavItem = {
+// lib/nav.ts
+
+export type NavLink = {
+  title: string;
+  description?: string;
+  href: string;
+  disabled?: boolean;
+};
+
+export type ProductMenuItem = {
   title: string;
   description: string;
   href: string;
+  icon: "lpDatabase" | "aiMatching" | "coldEmail" | "dataRoom" | "aiQa" | "nda" | "lpPortal" | "commitment";
   disabled?: boolean;
-  items?: Array<{
-    title: string;
-    description: string;
-    href: string;
-    disabled?: boolean;
-  }>;
+};
+
+export type ProductMenuColumn = {
+  title: string;
+  items: ProductMenuItem[];
 };
 
 export type NavCta = {
@@ -18,124 +27,133 @@ export type NavCta = {
   disabled?: boolean;
 };
 
-export const navConfig: {
-  links: NavItem[];
-  ctas: NavCta[];
-  disabled?: boolean;
-} = {
+export type NavConfig = {
+  product: {
+    title: string;
+    description: string;
+    columns: ProductMenuColumn[];
+    footerCtas: Array<{
+      label: string;
+      href: string;
+      disabled?: boolean;
+    }>;
+  };
+  links: NavLink[]; // Pricing only (top-level)
+  dropdowns: Array<{
+    title: "Resources" | "Company";
+    description: string;
+    items: NavLink[];
+  }>;
+  ctas: NavCta[]; // desktop CTA group
+};
+
+export const navConfig: NavConfig = {
+  product: {
+    title: "Product",
+    description: "Everything you need to run fundraising end-to-end.",
+    columns: [
+      {
+        title: "Find Investors",
+        items: [
+          {
+            icon: "lpDatabase",
+            title: "LP Database",
+            description: "150K+ investor profiles & mandates",
+            href: "/product/lp-database",
+          },
+          {
+            icon: "aiMatching",
+            title: "AI Matching",
+            description: "Score & rank investor fit",
+            href: "/product/ai-matching",
+          },
+        ],
+      },
+      {
+        title: "Reach & Engage",
+        items: [
+          {
+            icon: "coldEmail",
+            title: "Cold Email",
+            description: "Personalized outreach sequences",
+            href: "/product/cold-email",
+          },
+          {
+            icon: "dataRoom",
+            title: "Data Room",
+            description: "Secure document sharing",
+            href: "/product/data-room",
+          },
+          {
+            icon: "aiQa",
+            title: "AI Q&A",
+            description: "24/7 investor question handling",
+            href: "/product/ai-qa",
+          },
+        ],
+      },
+      {
+        title: "Close Deals",
+        items: [
+          {
+            icon: "nda",
+            title: "NDA Signing",
+            description: "Gate access without manual chasing",
+            href: "/product/nda-signing",
+          },
+          {
+            icon: "lpPortal",
+            title: "LP Portal",
+            description: "Branded investor experience",
+            href: "/product/lp-portal",
+          },
+          {
+            icon: "commitment",
+            title: "Commitment Tracking",
+            description: "From soft-circle to hard commit",
+            href: "/product/commitment-tracking",
+          },
+        ],
+      },
+    ],
+    footerCtas: [
+      { label: "See Full Platform →", href: "/product" },
+      { label: "Watch 2-Min Demo →", href: "/contact" },
+    ],
+  },
+
   links: [
-    {
-      title: "Product",
-      description: "Explore tailored solutions for every team.",
-      href: "/product",
-      items: [
-        {
-          title: "Allocators",
-          description: "Consolidate mandates and streamline allocation reviews.",
-          href: "/product/allocators",
-        },
-        {
-          title: "Asset Managers",
-          description: "Track fundraising workflows and investor engagement in one place.",
-          href: "/product/asset-managers",
-          disabled: true,
-        },
-        {
-          title: "Data Room",
-          description: "Securely share diligence-ready materials with investors.",
-          href: "/product/data-room",
-          disabled: true,
-        },
-        {
-          title: "Due Diligence",
-          description: "Coordinate diligence requests and stakeholders with structured checklists.",
-          href: "/product/due-diligence",
-          disabled: true,
-        },
-        {
-          title: "Investor Database",
-          description: "Search global LP profiles, mandates, and contact data.",
-          href: "/product/investor-database",
-          disabled: true,
-        },
-        {
-          title: "Investment Memo",
-          description: "Create consistent memos with collaborative templates.",
-          href: "/product/investment-memo",
-          disabled: true,
-        },
-        {
-          title: "Pitch Deck",
-          description: "Build interactive decks powered by live data and metrics.",
-          href: "/product/pitch-deck",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Pricing",
-      description: "Select a plan that fits your team and scale.",
-      href: "/pricing",
-      disabled: true,
-    },
+    { title: "Pricing", href: "/pricing" },
+  ],
+
+  dropdowns: [
     {
       title: "Resources",
       description: "Guides and data to move faster.",
-      href: "/resources",
       items: [
-        {
-          title: "Insights",
-          description: "Research-backed essays on fundraising and capital markets.",
-          href: "/insights",
-        },
-        {
-          title: "Glossary",
-          description: "Modern investing terms and definitions, curated for teams.",
-          href: "/glossary",
-        },
-        {
-          title: "Database",
-          description: "Benchmark datasets covering investors, deals, and managers.",
-          href: "/database",
-        },
-        {
-          title: "The Fund One Handbook",
-          description: "Step-by-step playbook for raising and operating your first fund.",
-          href: "/fund-one-handbook",
-          disabled: true,
-        },
+        { title: "Insights", href: "/insights", description: "Research-backed essays." },
+        { title: "Guides", href: "/guides", description: "Playbooks and how-tos.", disabled: true },
+        { title: "Glossary", href: "/glossary", description: "Definitions curated for teams." },
+        { title: "Database", href: "/database", description: "Firm + investor directories." },
+        { title: "Help Center", href: "/help", description: "Docs and support.", disabled: true },
       ],
     },
     {
-      title: "Customers",
-      description: "See how leading firms use CapQ to scale.",
-      href: "/customers",
-      disabled: true,
-    },
-    {
-      title: "About",
-      description: "Learn about our mission, team, and investors.",
-      href: "/about",
-    },
-    {
-      title: "Contact",
-      description: "Talk with our team about partnerships or support.",
-      href: "/contact",
+      title: "Company",
+      description: "Who we are and what we’re building.",
+      items: [
+        { title: "About us", href: "/about", description: "Mission + team." },
+        { title: "News", href: "/news", description: "Updates and announcements.", disabled: true },
+        { title: "Contact", href: "/contact", description: "Talk to our team." },
+      ],
     },
   ],
+
   ctas: [
     {
-      label: "Login",
-      href: "/login",
-      variant: "secondary",
-      disabled: true,
-    },
-    {
-      label: "Request a demo",
+      label: "Start Free Trial",
       href: "/contact",
       variant: "primary",
     },
   ],
 };
-
-export type NavConfig = typeof navConfig;

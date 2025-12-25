@@ -1,25 +1,29 @@
+// lib/home/homeContent.ts
 import type { HomeContent } from "./types";
 
 export const homeContent: HomeContent = {
   hero: {
-    eyebrow: "AI-powered fundraising workspace",
-    title: "Run fundraising with clarity.",
+    eyebrow: "AI-POWERED FUNDRAISING OS",
+    title: "Run fundraising in one system of record",
     description:
-      "CQ centralizes investor discovery, diligence, and collaboration so alternative investment teams can move from outreach to close with less friction.",
-    primaryCta: { label: "Request a demo", href: "/contact" },
-    secondaryCta: { label: "Join the waitlist", href: "/contact" },
-    proofLabel: "Trusted by alternative investment teams",
+      "CQ centralizes your investor pipeline, diligence, and closes in structured workflows. Keep every task, document, and decision tied to the right LP.",
+    primaryCta: { label: "Start free trial", href: "/contact" },
+    secondaryCta: { label: "Request a demo", href: "/contact" },
+
+    proofLabel: "Trusted by emerging managers raising their first funds",
     proofLogos: [
       { name: "Allocator Firm", src: "/logo-1.svg" },
       { name: "Family Office", src: "/logo-2.svg" },
       { name: "Endowment", src: "/logo-3.svg" },
       { name: "Institutional", src: "/logo-5.svg" },
     ],
+
     heroImage: {
       src: "/images/home/CQ_platform.png",
       alt: "CQ fundraising workspace preview",
     },
   },
+
   benefitsIntro: {
     title: "Bring every fundraising motion into one system",
     description:
@@ -41,106 +45,91 @@ export const homeContent: HomeContent = {
       },
       {
         title: "AI summaries cut time spent on memos, notes, and diligence recaps.",
-        image: { src: "/images/features/ai-summary.png", alt: "AI summary" },
+        image: {
+          src: "/images/features/ai-summary.png",
+          alt: "AI summary",
+        },
       },
     ],
   },
+
   products: {
-    title: "Explore the CQ platform",
+    title: "Fundraising workflows, built for investment teams",
     items: [
       {
-        title: "Allocators",
+        title: "Investor targeting",
         description:
-          "Map LP mandates, assign owners, and keep outreach accountable.",
-        href: "/product/allocators",
+          "BBuild a mandate-fit LP list by strategy, check size, and geography.",
+        href: "/product/lp-database",
       },
       {
-        title: "Data Room",
+        title: "Outreach & Pipeline",
         description:
-          "Share diligence files with permissions, analytics, and audit logs.",
+          "Run outbound and track motion by stage without spreadsheet drift. ",
         href: "/product/data-room",
       },
       {
-        title: "Due Diligence",
+        title: "Diligence & intelligence",
         description:
-          "Capture Q&A, comments, and approvals without leaving the workspace.",
+          "Turn materials into structured takeaways and IC-ready drafts.",
         href: "/product/due-diligence",
       },
       {
-        title: "Investor Database",
+        title: "Document management",
         description:
-          "Search investors by mandate, strategy, geography, and check size.",
+          "Manage permissions, NDAs, and access history in one place.",
         href: "/product/investor-database",
       },
       {
-        title: "Investment Memos",
+        title: "IC & Approvals",
         description:
-          "Draft structured memos with AI and keep them linked to the data room.",
+          "Track decisions, approvals, and follow-ups without losing context.",
         href: "/product/investment-memos",
       },
       {
-        title: "Pitch Deck Sharing",
-        description: "Distribute trackable decks and get alerts when LPs engage.",
+        title: "Closing & LP reporting",
+        description: "Track soft-circled vs hard commits through close.",
         href: "/product/pitch-deck-sharing",
       },
     ],
   },
+
+  // ✅ UPDATED: Outcomes now uses the “Speed & Simplicity” content for your slider
   outcomes: {
-    title: "Outcomes investment teams can count on",
+    title: "2 hours to your first LP email. Not 2 months.",
     description:
-      "CQ unifies investor intelligence, workflows, and collaboration so you see the full fundraising lifecycle in one system.",
+      "Upload your deck, get ranked LP matches, and launch outreach—without stitching together five tools.",
     cards: [
       {
-        title: "Structured deal visibility",
-        description: "View mandates, tasks, and blockers at a glance.",
+        title: "Upload deck",
+        description:
+          "Drop your pitch + materials once. CQ keeps them organized and ready for diligence.",
         image: {
-          src: "/images/home/Structured_deal_visibility.png",
-          alt: "Structured deal visibility",
+          src: "/images/home/speed-upload-deck.png",
+          alt: "Upload deck in CQ",
         },
       },
       {
-        title: "Sharper investor targeting",
+        title: "CQ finds 50 matching LPs",
         description:
-          "Filter allocators by mandate fit, geography, and relationship history.",
+          "Match by mandate fit, check size, and constraints—so targeting starts ranked, not guessed.",
         image: {
-          src: "/images/home/Sharper investor targeting.png",
-          alt: "Investor targeting tools",
+          src: "/images/home/speed-matching-lps.png",
+          alt: "Ranked LP matches in CQ",
         },
       },
       {
-        title: "AI-assisted diligence",
+        title: "Send first emails",
         description:
-          "Turn decks and data rooms into instant answers, summaries, and memos.",
+          "Launch personalized outreach from your list, track replies, and keep next steps tied to each LP.",
         image: {
-          src: "/images/home/AI-assisted diligence.png",
-          alt: "AI diligence assistant",
-        },
-      },
-      {
-        title: "Secure collaboration",
-        description:
-          "Invite LPs with guardrails, audit logs, and message history in one place.",
-        image: {
-          src: "/images/home/Secure_collaboration.png",
-          alt: "Secure collaboration",
-        },
-      },
-      {
-        title: "Faster memo creation",
-        description:
-          "Generate first drafts instantly and edit with your team's commentary.",
-        image: { src: "/images/home/Faster_memo_creation.png", alt: "Memo creation" },
-      },
-      {
-        title: "Audit-ready history",
-        description: "Retain updates, files, and approvals for every mandate.",
-        image: {
-          src: "/images/home/Audit_ready.png",
-          alt: "Audit-ready history",
+          src: "/images/home/speed-send-emails.png",
+          alt: "Cold email sequences and reply tracking in CQ",
         },
       },
     ],
   },
+
   testimonials: {
     title: "What teams say about CQ",
     items: [
@@ -178,13 +167,15 @@ export const homeContent: HomeContent = {
       },
     ],
   },
+
   ctaBox: {
-    title: "Ready to run fundraising with clarity?",
+    title: "Ready to find your LPs?",
     description:
       "See how CQ brings investor targeting, diligence, and reporting into one finance-grade workspace.",
-    primaryCta: { label: "Request a demo", href: "/contact" },
-    secondaryCta: { label: "Join the waitlist", href: "/contact" },
+    primaryCta: { label: "Start free trial", href: "/contact" },
+    secondaryCta: { label: "Talk to us", href: "/contact" },
   },
+
   resources: {
     title: "Latest insights",
     source: "insightsNewest",

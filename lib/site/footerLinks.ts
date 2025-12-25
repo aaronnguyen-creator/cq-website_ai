@@ -12,7 +12,7 @@ export const footerSections: FooterSection[] = [
   {
     title: "Product",
     links: [
-      { label: "Allocators", href: "/product/allocators" },
+      { label: "Allocators", href: "/product/lp-database" },
       { label: "Data Room", href: "/product/data-room" },
       { label: "Due Diligence", href: "/product/due-diligence" },
       { label: "Investor Database", href: "/product/investor-database" },

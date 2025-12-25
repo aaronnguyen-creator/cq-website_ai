@@ -1,5 +1,4 @@
 import { HomeHero } from "@/components/home/HomeHero";
-import { BenefitsIntro } from "@/components/home/BenefitsIntro";
 import { ProductModules } from "@/components/home/ProductModules";
 import { OutcomesCarousel } from "@/components/home/OutcomesCarousel";
 import { TestimonialsSlider } from "@/components/home/TestimonialsSlider";
@@ -12,7 +11,6 @@ export default function Home() {
     <div className="bg-background text-foreground">
       <main>
         <HomeHero data={homeContent.hero} />
-        <BenefitsIntro data={homeContent.benefitsIntro} />
         <ProductModules data={homeContent.products} />
         <OutcomesCarousel data={homeContent.outcomes} />
         <TestimonialsSlider data={homeContent.testimonials} />
