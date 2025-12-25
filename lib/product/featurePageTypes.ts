@@ -1,5 +1,6 @@
 // lib/product/featurePageTypes.ts
 
+/** Shared */
 export type Media = {
   type?: "image" | "video";
   src: string;
@@ -11,60 +12,83 @@ export type CTA = {
   href: string;
 };
 
+/** ---------------------------
+ *  NEW (CURRENT) PAGE TEMPLATE
+ *  --------------------------*/
+
+/** HERO */
 export type FeatureHeroConfig = {
-  eyebrow?: string; // small label pill e.g. "Fundraising Workflow"
-  title: string; // feature name
-  highlight?: string[]; // words/phrases to highlight in title
-  valueProp: string; // one-line value prop
-  primaryCta: CTA; // "Try Free"
-  secondaryCta?: CTA; // "See Full Platform"
-  media: Media; // screenshot/video
+  eyebrow?: string;
+  title: string;
+  highlight?: string[];
+  valueProp: string;
+  primaryCta: CTA;
+  secondaryCta?: CTA;
+  media: Media;
 };
 
+/** PROBLEM ("WITHOUT CQ...") */
 export type ProblemCard = {
   title: string;
   description: string;
 };
 
 export type ProblemConfig = {
-  eyebrow?: string;
-  title?: string;
+  eyebrow?: string; // "WITHOUT CQ"
+  title?: string; // "Without CQ..."
   subhead?: string;
-  cards: ProblemCard[]; // now 6
+  cards: ProblemCard[];
 };
 
-
-
+/** HOW IT WORKS */
 export type HowItWorksStep = {
   title: string;
   description: string;
-  media?: Media; // UI screenshot per step
+  media?: Media;
 };
 
 export type HowItWorksConfig = {
   title: string;
-  steps: HowItWorksStep[]; // 3-4 steps
+  steps: HowItWorksStep[];
 };
+
+/** CAPABILITIES */
+export type CapabilityIcon =
+  | "sparkles"
+  | "shield"
+  | "workflow"
+  | "search"
+  | "file"
+  | "chart"
+  | "mail"
+  | "lock"
+  | "users"
+  | "message"
+  | "arrowRight"
+  | "check"
+  | "warning";
 
 export type Capability = {
   title: string;
   description: string;
-  icon?: "filter" | "sparkles" | "shield" | "workflow" | "search" | "file" | "chart"; // simple enum for now
+  icon?: CapabilityIcon;
 };
 
 export type CapabilitiesConfig = {
   title: string;
-  items: Capability[]; // 4-6
+  items: Capability[];
 };
 
+/** WORKFLOW INTEGRATION */
 export type WorkflowIntegrationConfig = {
   title: string;
-  beforeTitle?: string; // "Before this step..."
+  beforeTitle?: string;
   before: string[];
-  afterTitle?: string; // "After this step..."
+  afterTitle?: string;
   after: string[];
 };
 
+/** SOCIAL PROOF */
 export type SocialProofConfig = {
   quote: string;
   name: string;
@@ -73,15 +97,81 @@ export type SocialProofConfig = {
   avatarSrc?: string;
 };
 
+/** FINAL CTA */
 export type FinalCTAConfig = {
-  title: string; // "Try Allocators Free"
+  title: string;
   description: string;
   primaryCta: CTA;
   secondaryCta?: CTA;
+  trustLine?: string;
 };
+
+/** ---------------------------
+ *  LEGACY SECTION TYPES (COMPAT)
+ *  Keep these so existing components compile.
+ *  You can delete later after refactors.
+ *  --------------------------*/
+
+/** CTA Band (legacy) */
+export type CTABandContent = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  primaryCta: CTA;
+  secondaryCta?: CTA;
+  trustLine?: string;
+};
+
+/** Highlights (legacy) */
+export type HighlightItem = {
+  title: string;
+  description?: string;
+  icon?: CapabilityIcon;
+};
+
+export type HighlightsContent = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: HighlightItem[];
+};
+
+/** Solution Intro (legacy) */
+export type SolutionIntroContent = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  bullets?: string[];
+  primaryCta?: CTA;
+  secondaryCta?: CTA;
+};
+
+/** Customer Proof / Logos (legacy) */
+export type CustomerLogo = {
+  name: string;
+  src?: string;
+};
+
+export type CustomerProofContent = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  logos?: CustomerLogo[];
+  quote?: string;
+  name?: string;
+  role?: string;
+  company?: string;
+  avatarSrc?: string;
+};
+
+/** ---------------------------
+ *  FINAL PAGE CONFIG
+ *  --------------------------*/
 
 export type FeaturePageConfig = {
   slug: string;
+
+  // New template sections
   hero: FeatureHeroConfig;
   problem: ProblemConfig;
   howItWorks: HowItWorksConfig;
@@ -89,4 +179,10 @@ export type FeaturePageConfig = {
   workflowIntegration: WorkflowIntegrationConfig;
   socialProof: SocialProofConfig;
   finalCta: FinalCTAConfig;
+
+  // Legacy sections (optional so old code compiles)
+  ctaBand?: CTABandContent;
+  highlights?: HighlightsContent;
+  solutionIntro?: SolutionIntroContent;
+  customerProof?: CustomerProofContent;
 };
